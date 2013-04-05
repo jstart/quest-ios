@@ -7,23 +7,43 @@
 //
 
 #import "AppDelegate.h"
+#import "DCIntrospect.h"
+#import <Parse/Parse.h>
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Parse setApplicationId:@"GuK8T7ww0O8n3436UJuscxvbC64b39FdvtKe7K0W"
+                  clientKey:@"E2hE67txdeet624MrJRmpGowlh6WhdyrJ0B94IVJ"];
+    [PFFacebookUtils initializeFacebook];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        self.viewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPhone" bundle:nil];
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+        self.viewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+#if TARGET_IPHONE_SIMULATOR
+    [[DCIntrospect sharedIntrospector] start];
+#endif
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [PFFacebookUtils handleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

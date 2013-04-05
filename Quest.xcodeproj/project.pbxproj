@@ -16,14 +16,19 @@
 		23A889F9170E1B850045CB71 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A889F8170E1B850045CB71 /* Default.png */; };
 		23A889FB170E1B850045CB71 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A889FA170E1B850045CB71 /* Default@2x.png */; };
 		23A889FD170E1B850045CB71 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A889FC170E1B850045CB71 /* Default-568h@2x.png */; };
-		23A88A00170E1B850045CB71 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A889FF170E1B850045CB71 /* ViewController.m */; };
-		23A88A03170E1B850045CB71 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A01170E1B850045CB71 /* ViewController_iPhone.xib */; };
-		23A88A06170E1B850045CB71 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A04170E1B850045CB71 /* ViewController_iPad.xib */; };
+		23A88A00170E1B850045CB71 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A889FF170E1B850045CB71 /* HomeViewController.m */; };
+		23A88A03170E1B850045CB71 /* HomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A01170E1B850045CB71 /* HomeViewController_iPhone.xib */; };
+		23A88A06170E1B850045CB71 /* HomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A04170E1B850045CB71 /* HomeViewController_iPad.xib */; };
 		23A88A0E170E1B850045CB71 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A88A0D170E1B850045CB71 /* SenTestingKit.framework */; };
 		23A88A0F170E1B850045CB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E6170E1B850045CB71 /* UIKit.framework */; };
 		23A88A10170E1B850045CB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E8170E1B850045CB71 /* Foundation.framework */; };
 		23A88A18170E1B850045CB71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A16170E1B850045CB71 /* InfoPlist.strings */; };
 		23A88A1B170E1B850045CB71 /* QuestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A1A170E1B850045CB71 /* QuestTests.m */; };
+		23A88A27170E2F7C0045CB71 /* IntroductionPanelCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A26170E2F7C0045CB71 /* IntroductionPanelCreator.m */; };
+		23A88A2B170E30030045CB71 /* Introduction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A2A170E30030045CB71 /* Introduction.plist */; };
+		23A88A32170E5F340045CB71 /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A30170E5F340045CB71 /* SampleImage1.png */; };
+		23A88A33170E5F340045CB71 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A31170E5F340045CB71 /* SampleImage2.png */; };
+		DC3E0CFEA7544E75AB385A48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF73FE1EE734EFA873EB83E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,16 +55,23 @@
 		23A889F8170E1B850045CB71 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		23A889FA170E1B850045CB71 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		23A889FC170E1B850045CB71 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		23A889FE170E1B850045CB71 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		23A889FF170E1B850045CB71 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		23A88A02170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		23A88A05170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		23A889FE170E1B850045CB71 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		23A889FF170E1B850045CB71 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		23A88A02170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPhone.xib; sourceTree = "<group>"; };
+		23A88A05170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPad.xib; sourceTree = "<group>"; };
 		23A88A0C170E1B850045CB71 /* QuestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A88A0D170E1B850045CB71 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		23A88A15170E1B850045CB71 /* QuestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QuestTests-Info.plist"; sourceTree = "<group>"; };
 		23A88A17170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		23A88A19170E1B850045CB71 /* QuestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestTests.h; sourceTree = "<group>"; };
 		23A88A1A170E1B850045CB71 /* QuestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestTests.m; sourceTree = "<group>"; };
+		23A88A25170E2F7C0045CB71 /* IntroductionPanelCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroductionPanelCreator.h; path = "View Utilities/IntroductionPanelCreator.h"; sourceTree = "<group>"; };
+		23A88A26170E2F7C0045CB71 /* IntroductionPanelCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroductionPanelCreator.m; path = "View Utilities/IntroductionPanelCreator.m"; sourceTree = "<group>"; };
+		23A88A2A170E30030045CB71 /* Introduction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Introduction.plist; path = Resources/plists/Introduction.plist; sourceTree = "<group>"; };
+		23A88A30170E5F340045CB71 /* SampleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage1.png; sourceTree = "<group>"; };
+		23A88A31170E5F340045CB71 /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
+		387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		DDF73FE1EE734EFA873EB83E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 				23A889E7170E1B850045CB71 /* UIKit.framework in Frameworks */,
 				23A889E9170E1B850045CB71 /* Foundation.framework in Frameworks */,
 				23A889EB170E1B850045CB71 /* CoreGraphics.framework in Frameworks */,
+				DC3E0CFEA7544E75AB385A48 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +106,7 @@
 				23A88A13170E1B850045CB71 /* QuestTests */,
 				23A889E5170E1B850045CB71 /* Frameworks */,
 				23A889E4170E1B850045CB71 /* Products */,
+				387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +126,7 @@
 				23A889E8170E1B850045CB71 /* Foundation.framework */,
 				23A889EA170E1B850045CB71 /* CoreGraphics.framework */,
 				23A88A0D170E1B850045CB71 /* SenTestingKit.framework */,
+				DDF73FE1EE734EFA873EB83E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,12 +134,15 @@
 		23A889EC170E1B850045CB71 /* Quest */ = {
 			isa = PBXGroup;
 			children = (
+				23A88A2C170E544E0045CB71 /* Views */,
+				23A88A28170E2FE10045CB71 /* Resources */,
+				23A88A24170E2F510045CB71 /* View Utilities */,
 				23A889F5170E1B850045CB71 /* AppDelegate.h */,
 				23A889F6170E1B850045CB71 /* AppDelegate.m */,
-				23A889FE170E1B850045CB71 /* ViewController.h */,
-				23A889FF170E1B850045CB71 /* ViewController.m */,
-				23A88A01170E1B850045CB71 /* ViewController_iPhone.xib */,
-				23A88A04170E1B850045CB71 /* ViewController_iPad.xib */,
+				23A889FE170E1B850045CB71 /* HomeViewController.h */,
+				23A889FF170E1B850045CB71 /* HomeViewController.m */,
+				23A88A01170E1B850045CB71 /* HomeViewController_iPhone.xib */,
+				23A88A04170E1B850045CB71 /* HomeViewController_iPad.xib */,
 				23A889ED170E1B850045CB71 /* Supporting Files */,
 			);
 			path = Quest;
@@ -163,6 +181,40 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		23A88A24170E2F510045CB71 /* View Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A25170E2F7C0045CB71 /* IntroductionPanelCreator.h */,
+				23A88A26170E2F7C0045CB71 /* IntroductionPanelCreator.m */,
+			);
+			name = "View Utilities";
+			sourceTree = "<group>";
+		};
+		23A88A28170E2FE10045CB71 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A30170E5F340045CB71 /* SampleImage1.png */,
+				23A88A31170E5F340045CB71 /* SampleImage2.png */,
+				23A88A29170E2FE70045CB71 /* plists */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		23A88A29170E2FE70045CB71 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A2A170E30030045CB71 /* Introduction.plist */,
+			);
+			name = plists;
+			sourceTree = "<group>";
+		};
+		23A88A2C170E544E0045CB71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +225,7 @@
 				23A889DF170E1B850045CB71 /* Sources */,
 				23A889E0170E1B850045CB71 /* Frameworks */,
 				23A889E1170E1B850045CB71 /* Resources */,
+				7DC796179B164175A07373A9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,8 +291,11 @@
 				23A889F9170E1B850045CB71 /* Default.png in Resources */,
 				23A889FB170E1B850045CB71 /* Default@2x.png in Resources */,
 				23A889FD170E1B850045CB71 /* Default-568h@2x.png in Resources */,
-				23A88A03170E1B850045CB71 /* ViewController_iPhone.xib in Resources */,
-				23A88A06170E1B850045CB71 /* ViewController_iPad.xib in Resources */,
+				23A88A03170E1B850045CB71 /* HomeViewController_iPhone.xib in Resources */,
+				23A88A06170E1B850045CB71 /* HomeViewController_iPad.xib in Resources */,
+				23A88A2B170E30030045CB71 /* Introduction.plist in Resources */,
+				23A88A32170E5F340045CB71 /* SampleImage1.png in Resources */,
+				23A88A33170E5F340045CB71 /* SampleImage2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +323,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		7DC796179B164175A07373A9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -276,7 +346,8 @@
 			files = (
 				23A889F3170E1B850045CB71 /* main.m in Sources */,
 				23A889F7170E1B850045CB71 /* AppDelegate.m in Sources */,
-				23A88A00170E1B850045CB71 /* ViewController.m in Sources */,
+				23A88A00170E1B850045CB71 /* HomeViewController.m in Sources */,
+				23A88A27170E2F7C0045CB71 /* IntroductionPanelCreator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,20 +378,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		23A88A01170E1B850045CB71 /* ViewController_iPhone.xib */ = {
+		23A88A01170E1B850045CB71 /* HomeViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				23A88A02170E1B850045CB71 /* en */,
 			);
-			name = ViewController_iPhone.xib;
+			name = HomeViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		23A88A04170E1B850045CB71 /* ViewController_iPad.xib */ = {
+		23A88A04170E1B850045CB71 /* HomeViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				23A88A05170E1B850045CB71 /* en */,
 			);
-			name = ViewController_iPad.xib;
+			name = HomeViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		23A88A16170E1B850045CB71 /* InfoPlist.strings */ = {
@@ -394,6 +465,7 @@
 		};
 		23A88A1F170E1B850045CB71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Quest/Quest-Prefix.pch";
@@ -405,6 +477,7 @@
 		};
 		23A88A20170E1B850045CB71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Quest/Quest-Prefix.pch";
@@ -467,6 +540,7 @@
 				23A88A20170E1B850045CB71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23A88A21170E1B850045CB71 /* Build configuration list for PBXNativeTarget "QuestTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +549,7 @@
 				23A88A23170E1B850045CB71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
