@@ -16,7 +16,6 @@
 		23A889F9170E1B850045CB71 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A889F8170E1B850045CB71 /* Default.png */; };
 		23A889FB170E1B850045CB71 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A889FA170E1B850045CB71 /* Default@2x.png */; };
 		23A889FD170E1B850045CB71 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A889FC170E1B850045CB71 /* Default-568h@2x.png */; };
-		23A88A00170E1B850045CB71 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A889FF170E1B850045CB71 /* HomeViewController.m */; };
 		23A88A03170E1B850045CB71 /* HomeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A01170E1B850045CB71 /* HomeViewController_iPhone.xib */; };
 		23A88A06170E1B850045CB71 /* HomeViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A04170E1B850045CB71 /* HomeViewController_iPad.xib */; };
 		23A88A0E170E1B850045CB71 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A88A0D170E1B850045CB71 /* SenTestingKit.framework */; };
@@ -26,8 +25,18 @@
 		23A88A1B170E1B850045CB71 /* QuestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A1A170E1B850045CB71 /* QuestTests.m */; };
 		23A88A27170E2F7C0045CB71 /* IntroductionPanelCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A26170E2F7C0045CB71 /* IntroductionPanelCreator.m */; };
 		23A88A2B170E30030045CB71 /* Introduction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A2A170E30030045CB71 /* Introduction.plist */; };
-		23A88A32170E5F340045CB71 /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A30170E5F340045CB71 /* SampleImage1.png */; };
-		23A88A33170E5F340045CB71 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A31170E5F340045CB71 /* SampleImage2.png */; };
+		23A88A3B170E6F4D0045CB71 /* CreateQuestViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A37170E6F4D0045CB71 /* CreateQuestViewController.h */; };
+		23A88A3C170E6F4D0045CB71 /* CreateQuestViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */; };
+		23A88A3D170E6F4D0045CB71 /* CreateQuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A39170E6F4D0045CB71 /* CreateQuestViewController.xib */; };
+		23A88A40170E6F5D0045CB71 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A3F170E6F5D0045CB71 /* HomeViewController.m */; };
+		23A88A41170E6FA40045CB71 /* CreateQuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */; };
+		23A88A49170E74710045CB71 /* checkmark_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A43170E74710045CB71 /* checkmark_active.png */; };
+		23A88A4A170E74710045CB71 /* checkmark_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A44170E74710045CB71 /* checkmark_active@2x.png */; };
+		23A88A4B170E74710045CB71 /* checkmark_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A45170E74710045CB71 /* checkmark_inactive.png */; };
+		23A88A4C170E74710045CB71 /* checkmark_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */; };
+		23A88A4D170E74710045CB71 /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A47170E74710045CB71 /* SampleImage1.png */; };
+		23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A48170E74710045CB71 /* SampleImage2.png */; };
+		23A88A52170E75550045CB71 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A51170E75550045CB71 /* Quest.m */; };
 		DC3E0CFEA7544E75AB385A48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF73FE1EE734EFA873EB83E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +64,6 @@
 		23A889F8170E1B850045CB71 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		23A889FA170E1B850045CB71 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		23A889FC170E1B850045CB71 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		23A889FE170E1B850045CB71 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		23A889FF170E1B850045CB71 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		23A88A02170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPhone.xib; sourceTree = "<group>"; };
 		23A88A05170E1B850045CB71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HomeViewController_iPad.xib; sourceTree = "<group>"; };
 		23A88A0C170E1B850045CB71 /* QuestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +75,19 @@
 		23A88A25170E2F7C0045CB71 /* IntroductionPanelCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroductionPanelCreator.h; path = "View Utilities/IntroductionPanelCreator.h"; sourceTree = "<group>"; };
 		23A88A26170E2F7C0045CB71 /* IntroductionPanelCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroductionPanelCreator.m; path = "View Utilities/IntroductionPanelCreator.m"; sourceTree = "<group>"; };
 		23A88A2A170E30030045CB71 /* Introduction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Introduction.plist; path = Resources/plists/Introduction.plist; sourceTree = "<group>"; };
-		23A88A30170E5F340045CB71 /* SampleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage1.png; sourceTree = "<group>"; };
-		23A88A31170E5F340045CB71 /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
+		23A88A37170E6F4D0045CB71 /* CreateQuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateQuestViewController.h; sourceTree = "<group>"; };
+		23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateQuestViewController.m; sourceTree = "<group>"; };
+		23A88A39170E6F4D0045CB71 /* CreateQuestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateQuestViewController.xib; sourceTree = "<group>"; };
+		23A88A3E170E6F5D0045CB71 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		23A88A3F170E6F5D0045CB71 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		23A88A43170E74710045CB71 /* checkmark_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_active.png; sourceTree = "<group>"; };
+		23A88A44170E74710045CB71 /* checkmark_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_active@2x.png"; sourceTree = "<group>"; };
+		23A88A45170E74710045CB71 /* checkmark_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_inactive.png; sourceTree = "<group>"; };
+		23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_inactive@2x.png"; sourceTree = "<group>"; };
+		23A88A47170E74710045CB71 /* SampleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage1.png; sourceTree = "<group>"; };
+		23A88A48170E74710045CB71 /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
+		23A88A50170E75550045CB71 /* Quest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quest.h; path = Models/Quest.h; sourceTree = "<group>"; };
+		23A88A51170E75550045CB71 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quest.m; path = Models/Quest.m; sourceTree = "<group>"; };
 		387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DDF73FE1EE734EFA873EB83E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,13 +152,13 @@
 		23A889EC170E1B850045CB71 /* Quest */ = {
 			isa = PBXGroup;
 			children = (
+				23A88A4F170E753C0045CB71 /* Models */,
+				23A88A34170E6F4D0045CB71 /* ViewControllers */,
 				23A88A2C170E544E0045CB71 /* Views */,
 				23A88A28170E2FE10045CB71 /* Resources */,
 				23A88A24170E2F510045CB71 /* View Utilities */,
 				23A889F5170E1B850045CB71 /* AppDelegate.h */,
 				23A889F6170E1B850045CB71 /* AppDelegate.m */,
-				23A889FE170E1B850045CB71 /* HomeViewController.h */,
-				23A889FF170E1B850045CB71 /* HomeViewController.m */,
 				23A88A01170E1B850045CB71 /* HomeViewController_iPhone.xib */,
 				23A88A04170E1B850045CB71 /* HomeViewController_iPad.xib */,
 				23A889ED170E1B850045CB71 /* Supporting Files */,
@@ -193,8 +211,7 @@
 		23A88A28170E2FE10045CB71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				23A88A30170E5F340045CB71 /* SampleImage1.png */,
-				23A88A31170E5F340045CB71 /* SampleImage2.png */,
+				23A88A42170E74710045CB71 /* Images */,
 				23A88A29170E2FE70045CB71 /* plists */,
 			);
 			name = Resources;
@@ -213,6 +230,41 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		23A88A34170E6F4D0045CB71 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A3E170E6F5D0045CB71 /* HomeViewController.h */,
+				23A88A3F170E6F5D0045CB71 /* HomeViewController.m */,
+				23A88A37170E6F4D0045CB71 /* CreateQuestViewController.h */,
+				23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */,
+				23A88A39170E6F4D0045CB71 /* CreateQuestViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		23A88A42170E74710045CB71 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A43170E74710045CB71 /* checkmark_active.png */,
+				23A88A44170E74710045CB71 /* checkmark_active@2x.png */,
+				23A88A45170E74710045CB71 /* checkmark_inactive.png */,
+				23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */,
+				23A88A47170E74710045CB71 /* SampleImage1.png */,
+				23A88A48170E74710045CB71 /* SampleImage2.png */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
+		23A88A4F170E753C0045CB71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A50170E75550045CB71 /* Quest.h */,
+				23A88A51170E75550045CB71 /* Quest.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +346,15 @@
 				23A88A03170E1B850045CB71 /* HomeViewController_iPhone.xib in Resources */,
 				23A88A06170E1B850045CB71 /* HomeViewController_iPad.xib in Resources */,
 				23A88A2B170E30030045CB71 /* Introduction.plist in Resources */,
-				23A88A32170E5F340045CB71 /* SampleImage1.png in Resources */,
-				23A88A33170E5F340045CB71 /* SampleImage2.png in Resources */,
+				23A88A3B170E6F4D0045CB71 /* CreateQuestViewController.h in Resources */,
+				23A88A3C170E6F4D0045CB71 /* CreateQuestViewController.m in Resources */,
+				23A88A3D170E6F4D0045CB71 /* CreateQuestViewController.xib in Resources */,
+				23A88A49170E74710045CB71 /* checkmark_active.png in Resources */,
+				23A88A4A170E74710045CB71 /* checkmark_active@2x.png in Resources */,
+				23A88A4B170E74710045CB71 /* checkmark_inactive.png in Resources */,
+				23A88A4C170E74710045CB71 /* checkmark_inactive@2x.png in Resources */,
+				23A88A4D170E74710045CB71 /* SampleImage1.png in Resources */,
+				23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,10 +403,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A88A41170E6FA40045CB71 /* CreateQuestViewController.m in Sources */,
 				23A889F3170E1B850045CB71 /* main.m in Sources */,
 				23A889F7170E1B850045CB71 /* AppDelegate.m in Sources */,
-				23A88A00170E1B850045CB71 /* HomeViewController.m in Sources */,
 				23A88A27170E2F7C0045CB71 /* IntroductionPanelCreator.m in Sources */,
+				23A88A40170E6F5D0045CB71 /* HomeViewController.m in Sources */,
+				23A88A52170E75550045CB71 /* Quest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

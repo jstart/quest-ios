@@ -7,13 +7,21 @@
 //
 
 #import "HomeViewController.h"
-#import "MYIntroductionView.h"
-#import "IntroductionPanelCreator.h"
+
 #import "FacebookSDK.h"
 #import <Parse/Parse.h>
 #import "UIControl+ALActionBlocks.h"
+#import "MYIntroductionView.h"
+#import "IntroductionPanelCreator.h"
+#import "CreateQuestViewController.h"
 
 @interface HomeViewController () <MYIntroductionDelegate>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *createButon;
+
+- (IBAction)pressedSettings:(id)sender;
+- (IBAction)pressedCreate:(id)sender;
 
 @property (nonatomic, strong) UIButton * loginButton;
 @end
@@ -102,4 +110,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)pressedSettings:(id)sender {
+    
+}
+
+- (IBAction)pressedCreate:(id)sender {
+    CreateQuestViewController * createQuestViewController = [[CreateQuestViewController alloc] initWithNibName:@"CreateQuestViewController" bundle:[NSBundle mainBundle]];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:createQuestViewController];
+
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
 @end

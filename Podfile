@@ -8,4 +8,6 @@ pod 'MYIntroduction', :git => 'https://github.com/jstart/iPhone-IntroductionTuto
 pod 'Facebook-iOS-SDK', '~> 3.2.1'
 pod 'ALActionBlocks', '~> 1.0'
 pod 'DCIntrospect', '~> 0.0.2'
+pod 'SSToolkit', '~> 1.0.3'
+pod 'UIColor-Utilities', '~> 1.0.1'
 
