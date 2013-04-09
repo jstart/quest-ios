@@ -14,11 +14,17 @@
 #import "MYIntroductionView.h"
 #import "IntroductionPanelCreator.h"
 #import "CreateQuestViewController.h"
+#import "SVPullToRefresh.h"
+#import "HMSegmentedControl.h"
 
-@interface HomeViewController () <MYIntroductionDelegate>
+#import "Quest.h"
+
+@interface HomeViewController () <MYIntroductionDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *createButon;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) HMSegmentedControl *segmentedControl;
 
 - (IBAction)pressedSettings:(id)sender;
 - (IBAction)pressedCreate:(id)sender;
@@ -31,16 +37,60 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
 	// Do any additional setup after loading the view, typically from a nib.
     if (![PFUser currentUser]) {
         [self createIntroductionView];
     }
+    
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Questing", @"Creating", @"Viewing"]];
+    [self.segmentedControl setSelectionLocation:HMSegmentedControlSelectionLocationDown];
+    [self.segmentedControl setSelectionStyle:HMSegmentedControlSelectionStyleBox];
+    [self.segmentedControl setFrame:CGRectMake(0, 44, 320, 50)];
+    [self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:self.segmentedControl];
+    
+    [self.tableView addPullToRefreshWithActionHandler:^(){
+        PFQuery * query = [Quest query];
+        switch (self.segmentedControl.selectedSegmentIndex) {
+            case 0:
+                [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+                break;
+            case 1:
+                [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+                break;
+            case 2:
+                [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+                break;
+                
+            default:
+                break;
+        }
+        [query setCachePolicy:kPFCachePolicyNetworkOnly];
+        [query orderByDescending:@"createdAt"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError * error){
+            int64_t delayInSeconds = 1.0; //SVPullToRefresh doesn't animate properly if task is less than 1.0 secs.
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                self.quests = [objects mutableCopy];
+                [self.tableView.pullToRefreshView stopAnimating];
+                [self.tableView reloadData];
+            });
+        }];
+    }];
+    
+    [self.tableView addInfiniteScrollingWithActionHandler:^(){
+        [self.tableView.infiniteScrollingView stopAnimating];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     if (![PFUser currentUser]) {
         [self.introductionView showInView:self.view];
     }
+    [self.tableView triggerPullToRefresh];
 }
 
 -(void)createIntroductionView{
@@ -102,6 +152,31 @@
             self.loginButton.alpha = 0.0;
         }];
     }
+}
+
+-(void)segmentedControlChangedValue:(HMSegmentedControl *) segmentedControl{
+    [self.tableView triggerPullToRefresh];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return self.quests.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString * cellIdentifier = @"cellIdentifier";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    Quest * quest = [self.quests objectAtIndex:indexPath.row];
+    cell.textLabel.text = quest.name;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 - (void)didReceiveMemoryWarning

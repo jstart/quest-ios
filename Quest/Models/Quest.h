@@ -13,5 +13,8 @@
 
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * description;
+@property (nonatomic, strong) PFUser * owner;
+@property (nonatomic, strong) PFRelation * viewers;
+@property (nonatomic, strong) PFRelation * questers;
 
 @end

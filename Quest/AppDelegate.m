@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "DCIntrospect.h"
+#import "UIResponder+KeyboardCache.h"
 #import <Parse/Parse.h>
+#import "RegisterSubclasses.h"
 
 #import "HomeViewController.h"
 
@@ -20,6 +22,7 @@
                   clientKey:@"E2hE67txdeet624MrJRmpGowlh6WhdyrJ0B94IVJ"];
     [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [RegisterSubclasses registerSubclasses];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -38,6 +41,7 @@
 #if TARGET_IPHONE_SIMULATOR
     [[DCIntrospect sharedIntrospector] start];
 #endif
+    [UIResponder cacheKeyboard:YES];
     return YES;
 }
 

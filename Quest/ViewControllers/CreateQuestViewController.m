@@ -10,10 +10,16 @@
 #import "UIColor+Expanded.h"
 #import "SSToolkit.h"
 #import <QuartzCore/QuartzCore.h>
+#import "XCDFormInputAccessoryView.h"
 
 #import "Quest.h"
 
-@interface CreateQuestViewController ()
+@interface CreateQuestViewController () <UITextFieldDelegate>{
+    BOOL cancelled;
+}
+
+@property (nonatomic, strong) XCDFormInputAccessoryView * inputAccessoryView;
+
 
 @end
 
@@ -24,7 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"Create a Page";
+        self.title = @"Create a Quest";
         self.view.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
         
         UIView * cancelView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
@@ -53,11 +59,16 @@
         [self.titleTextField setClearButtonEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
         self.titleTextField.layer.borderColor = [UIColor colorWithHexString:@"cccccc"].CGColor;
         self.titleTextField.layer.borderWidth = 1;
+        [self.titleTextField setDelegate:self];
         
         [self.descriptionTextField setFont:[UIFont fontWithName:@"Myriad Web Pro" size:14]];
         [self.descriptionTextField setTextEdgeInsets:UIEdgeInsetsMake(15, 15, 0, 0)];
         self.descriptionTextField.layer.borderColor = [UIColor colorWithHexString:@"cccccc"].CGColor;
         self.descriptionTextField.layer.borderWidth = 1;
+        [self.descriptionTextField setDelegate:self];
+        cancelled = NO;
+        
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(onKeyboardHide:) name:UIKeyboardWillHideNotification object:nil];
     }
     return self;
 }
@@ -67,7 +78,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.inputAccessoryView = [[XCDFormInputAccessoryView alloc] init];
+    [self.inputAccessoryView setHasDoneButton:NO animated:NO];
+}
 
+-(void)viewDidAppear:(BOOL)animated{
+    [self.titleTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,23 +101,35 @@
     if (!((UIButton*)[self.navigationItem.rightBarButtonItem.customView.subviews objectAtIndex:0]).isSelected && self.titleTextField.text.length > 0) {
         [((UIButton*)[self.navigationItem.rightBarButtonItem.customView.subviews objectAtIndex:0]) setEnabled:YES];
         [((UIButton*)[self.navigationItem.rightBarButtonItem.customView.subviews objectAtIndex:0]) setSelected:YES];
+        [self.inputAccessoryView setHasDoneButton:YES animated:YES];
     } else if(((UIButton*)[self.navigationItem.rightBarButtonItem.customView.subviews objectAtIndex:0]).isSelected && self.titleTextField.text.length < 1){
         [((UIButton*)[self.navigationItem.rightBarButtonItem.customView.subviews objectAtIndex:0]) setEnabled:NO];
         [((UIButton*)[self.navigationItem.rightBarButtonItem.customView.subviews objectAtIndex:0]) setSelected:NO];
+        [self.inputAccessoryView setHasDoneButton:NO animated:YES];
     }
 }
 
 -(void)close{
+    cancelled = YES;
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(void)onKeyboardHide:(NSNotification *)notification
+{
+    if (cancelled) {
+        return;
+    }
+    [self done];
+}
+
 
 -(void)done{
     SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Creating Quest..." loading:YES];
 	[hud show];
-    [Quest registerSubclass];
     Quest * newQuest = [Quest object];
     newQuest.name = self.titleTextField.text;
     newQuest.description = self.descriptionTextField.text;
+    newQuest.owner = [PFUser currentUser];
     [newQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
         [hud completeAndDismissWithTitle:@"Created!"];
         [self close];
@@ -111,8 +139,6 @@
 - (void)viewDidUnload {
     [self setTitleTextField:nil];
     [self setDescriptionTextField:nil];
-//    [self setPageOrPollSegmentedControl:nil];
-//    [self setThereCanOnlyBeOneImage:nil];
     [super viewDidUnload];
 }
 

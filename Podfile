@@ -10,4 +10,8 @@ pod 'ALActionBlocks', '~> 1.0'
 pod 'DCIntrospect', '~> 0.0.2'
 pod 'SSToolkit', '~> 1.0.3'
 pod 'UIColor-Utilities', '~> 1.0.1'
+pod 'UIResponder+KeyboardCache', '~> 0.1'
+pod 'XCDFormInputAccessoryView', '~> 1.0.0'
+pod 'SVPullToRefresh'
+
 

@@ -37,6 +37,7 @@
 		23A88A4D170E74710045CB71 /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A47170E74710045CB71 /* SampleImage1.png */; };
 		23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A48170E74710045CB71 /* SampleImage2.png */; };
 		23A88A52170E75550045CB71 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A51170E75550045CB71 /* Quest.m */; };
+		23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */; };
 		DC3E0CFEA7544E75AB385A48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF73FE1EE734EFA873EB83E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		23A88A48170E74710045CB71 /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
 		23A88A50170E75550045CB71 /* Quest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quest.h; path = Models/Quest.h; sourceTree = "<group>"; };
 		23A88A51170E75550045CB71 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quest.m; path = Models/Quest.m; sourceTree = "<group>"; };
+		23A88A54170F5FC00045CB71 /* RegisterSubclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterSubclasses.h; path = Utilities/RegisterSubclasses.h; sourceTree = "<group>"; };
+		23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterSubclasses.m; path = Utilities/RegisterSubclasses.m; sourceTree = "<group>"; };
 		387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DDF73FE1EE734EFA873EB83E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +155,7 @@
 		23A889EC170E1B850045CB71 /* Quest */ = {
 			isa = PBXGroup;
 			children = (
+				23A88A53170F5FA60045CB71 /* Utilities */,
 				23A88A4F170E753C0045CB71 /* Models */,
 				23A88A34170E6F4D0045CB71 /* ViewControllers */,
 				23A88A2C170E544E0045CB71 /* Views */,
@@ -265,6 +269,15 @@
 				23A88A51170E75550045CB71 /* Quest.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		23A88A53170F5FA60045CB71 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				23A88A54170F5FC00045CB71 /* RegisterSubclasses.h */,
+				23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +422,7 @@
 				23A88A27170E2F7C0045CB71 /* IntroductionPanelCreator.m in Sources */,
 				23A88A40170E6F5D0045CB71 /* HomeViewController.m in Sources */,
 				23A88A52170E75550045CB71 /* Quest.m in Sources */,
+				23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
