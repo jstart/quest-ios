@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		239A8589171764980091AC34 /* Waypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 239A8588171764980091AC34 /* Waypoint.m */; };
 		23A889E7170E1B850045CB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E6170E1B850045CB71 /* UIKit.framework */; };
 		23A889E9170E1B850045CB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E8170E1B850045CB71 /* Foundation.framework */; };
 		23A889EB170E1B850045CB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889EA170E1B850045CB71 /* CoreGraphics.framework */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		239A8587171764980091AC34 /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waypoint.h; path = Models/Waypoint.h; sourceTree = "<group>"; };
+		239A8588171764980091AC34 /* Waypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Waypoint.m; path = Models/Waypoint.m; sourceTree = "<group>"; };
 		23A889E3170E1B850045CB71 /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A889E6170E1B850045CB71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		23A889E8170E1B850045CB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -267,6 +270,8 @@
 			children = (
 				23A88A50170E75550045CB71 /* Quest.h */,
 				23A88A51170E75550045CB71 /* Quest.m */,
+				239A8587171764980091AC34 /* Waypoint.h */,
+				239A8588171764980091AC34 /* Waypoint.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 				23A88A40170E6F5D0045CB71 /* HomeViewController.m in Sources */,
 				23A88A52170E75550045CB71 /* Quest.m in Sources */,
 				23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */,
+				239A8589171764980091AC34 /* Waypoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,13 @@
 
 #import "RegisterSubclasses.h"
 #import "Quest.h"
+#import "Waypoint.h"
 
 @implementation RegisterSubclasses
 
 +(void)registerSubclasses{
     [Quest registerSubclass];
+    [Waypoint registerSubclass];
 }
 
 @end

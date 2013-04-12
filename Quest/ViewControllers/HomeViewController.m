@@ -16,6 +16,7 @@
 #import "CreateQuestViewController.h"
 #import "SVPullToRefresh.h"
 #import "HMSegmentedControl.h"
+#import "Foursquare2.h"
 
 #import "Quest.h"
 
@@ -30,6 +31,7 @@
 - (IBAction)pressedCreate:(id)sender;
 
 @property (nonatomic, strong) UIButton * loginButton;
+@property (nonatomic, strong) UIButton * foursquareLoginButton;
 @end
 
 @implementation HomeViewController
@@ -54,31 +56,37 @@
     
     [self.tableView addPullToRefreshWithActionHandler:^(){
         PFQuery * query = [Quest query];
-        switch (self.segmentedControl.selectedSegmentIndex) {
-            case 0:
-                [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-                break;
-            case 1:
-                [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-                break;
-            case 2:
-                [query whereKey:@"owner" equalTo:[PFUser currentUser]];
-                break;
-                
-            default:
-                break;
+        if ([PFUser currentUser]) {
+            switch (self.segmentedControl.selectedSegmentIndex) {
+                case 0:
+                    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+                    break;
+                case 1:
+                    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+                    break;
+                case 2:
+                    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
+                    break;
+                    
+                default:
+                    break;
+            }
+                    
+            [query setCachePolicy:kPFCachePolicyNetworkOnly];
+            [query orderByDescending:@"createdAt"];
+            [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError * error){
+                int64_t delayInSeconds = 1.0; //SVPullToRefresh doesn't animate properly if task is less than 1.0 secs.
+                dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+                dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    self.quests = [objects mutableCopy];
+                    [self.tableView.pullToRefreshView stopAnimating];
+                    [self.tableView reloadData];
+                });
+            }];
+        } else{
+            [self.tableView.pullToRefreshView stopAnimating];
         }
-        [query setCachePolicy:kPFCachePolicyNetworkOnly];
-        [query orderByDescending:@"createdAt"];
-        [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError * error){
-            int64_t delayInSeconds = 1.0; //SVPullToRefresh doesn't animate properly if task is less than 1.0 secs.
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                self.quests = [objects mutableCopy];
-                [self.tableView.pullToRefreshView stopAnimating];
-                [self.tableView reloadData];
-            });
-        }];
+
     }];
     
     [self.tableView addInfiniteScrollingWithActionHandler:^(){
@@ -125,7 +133,7 @@
     NSLog(@"%@ \nPanelIndex: %d", panel.Description, panelIndex);
     if (panelIndex == 1 && ![[self.introductionView subviews] containsObject:self.loginButton]) {
         self.loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.loginButton.frame = CGRectMake(self.introductionView.ContentScrollView.contentOffset.x + 320/2 - 200/2, self.introductionView.frame.size.height - 50 - 65 - 36 - 10, 200, 50);
+        self.loginButton.frame = CGRectMake(self.introductionView.ContentScrollView.contentOffset.x + 320/2 - 200/2, self.introductionView.frame.size.height - 50 - 65 - 36 - 100, 200, 50);
         [self.loginButton setTitle:@"Login With Facebook" forState:UIControlStateNormal];
         [self.loginButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
             [PFFacebookUtils logInWithPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
@@ -150,6 +158,31 @@
     else{
         [UIView animateWithDuration:0.2 animations:^() {
             self.loginButton.alpha = 0.0;
+        }];
+    }
+    if (panelIndex == 2 && ![[self.introductionView subviews] containsObject:self.loginButton]) {
+        self.foursquareLoginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.foursquareLoginButton.frame = CGRectMake(self.introductionView.ContentScrollView.contentOffset.x + 320/2 - 200/2, self.introductionView.frame.size.height - 50 - 65 - 36 - 100, 200, 50);
+        [self.foursquareLoginButton setTitle:@"Login With Foursquare" forState:UIControlStateNormal];
+        [self.foursquareLoginButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
+            [self.introductionView hideWithFadeOutDuration:0.2];
+            [Foursquare2 authorizeWithCallback:^(BOOL success, NSError * error){
+                if (!error) {
+                    NSLog(@"Uh oh. The user cancelled the Foursquare login. %@", error);
+                } else if (success) {
+                    NSLog(@"New User logged in with foursquare.");
+                }
+            } fromViewController:self];
+        }];
+        self.foursquareLoginButton.alpha = 0.0;
+        [self.introductionView.ContentScrollView addSubview:self.foursquareLoginButton];
+        [UIView animateWithDuration:0.2 animations:^() {
+            self.foursquareLoginButton.alpha = 1.0;
+        }];
+    }
+    else{
+        [UIView animateWithDuration:0.2 animations:^() {
+            self.foursquareLoginButton.alpha = 0.0;
         }];
     }
 }

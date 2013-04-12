@@ -11,7 +11,7 @@
 
 
 @implementation Quest
-@dynamic name, description, owner, viewers, questers;
+@dynamic name, description, owner, viewers, questers, waypoints;
 
 + (NSString *)parseClassName {
     return @"Quest";

@@ -16,5 +16,6 @@
 @property (nonatomic, strong) PFUser * owner;
 @property (nonatomic, strong) PFRelation * viewers;
 @property (nonatomic, strong) PFRelation * questers;
+@property (nonatomic, strong) PFRelation * waypoints;
 
 @end
