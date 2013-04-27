@@ -11,6 +11,7 @@
 #import "UIResponder+KeyboardCache.h"
 #import <Parse/Parse.h>
 #import "RegisterSubclasses.h"
+#import "UISS.h"
 
 #import "HomeViewController.h"
 
@@ -24,13 +25,6 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [RegisterSubclasses registerSubclasses];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.852 green:0.877 blue:0.886 alpha:1.000]];
-    NSDictionary* textAttributes = [NSDictionary dictionaryWithObjects: @[[UIColor colorWithWhite:0.332 alpha:1.000], [UIColor colorWithWhite:0.870 alpha:1.000]]
-                                                               forKeys: @[UITextAttributeTextColor, UITextAttributeTextShadowColor]];
-    [[UINavigationBar appearance] setTitleTextAttributes:textAttributes];
-    [[UIBarButtonItem appearance] setTitleTextAttributes: textAttributes
-                                                forState: UIControlStateNormal];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -40,14 +34,19 @@
     }
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    [self.navigationController setNavigationBarHidden:YES];
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
 #if TARGET_IPHONE_SIMULATOR
+    self.userInterfaceStyleSheets = [UISS configureWithURL:[NSURL URLWithString:@"http://localhost/~christophertruman/uiss.json"]];
     [[DCIntrospect sharedIntrospector] start];
+#else
+    self.userInterfaceStyleSheets = [UISS configureWithURL:[NSURL URLWithString:@"http://starcarcentral.com/uiss.json"]];
 #endif
+    self.userInterfaceStyleSheets.autoReloadEnabled = YES;
+    self.userInterfaceStyleSheets.autoReloadTimeInterval = 1;
+    self.userInterfaceStyleSheets.statusWindowEnabled = YES;
     [UIResponder cacheKeyboard:YES];
     return YES;
 }

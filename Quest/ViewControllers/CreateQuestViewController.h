@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class SSTextField;
+@class SSTextField, Quest;
 
 @interface CreateQuestViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet SSTextField *titleTextField;
 @property (strong, nonatomic) IBOutlet SSTextField *descriptionTextField;
+@property (strong, nonatomic) Quest * quest;
 
 @end

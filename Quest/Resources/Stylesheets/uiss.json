@@ -1,0 +1,28 @@
+{
+    "Variables": {
+        "navBarFont":["Calibri-Bold", 28],
+        "segmenteControlFont":["Avenir-Black", 16],
+        "tableCellFont":["Avenir-Black", 30]
+    },
+    
+    "UINavigationBar": {
+        "backgroundImage:normal":"quest-navbar",
+        "titleTextAttributes": {
+            "textColor":"white",
+            "textShadowColor":"clear",
+            "textShadowOffset": [0, 0],
+            "font":"$navBarFont"
+        }
+    },
+    "HMSegmentedControl":{
+        "textColor":"white",
+        "backgroundColor":"#8bcfb6",
+        "font":"$segmenteControlFont",
+        "selectionIndicatorColor":"black",
+        "selectedTextColor":"white"
+    },
+    
+    "QuestStyledTableViewCell":{
+        "textFont":"$tableCellFont"
+    }
+}

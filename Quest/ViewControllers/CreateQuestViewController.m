@@ -11,6 +11,8 @@
 #import "SSToolkit.h"
 #import <QuartzCore/QuartzCore.h>
 #import "XCDFormInputAccessoryView.h"
+#import "QuestTableViewController.h"
+#import "UIBarButtonItem+ImageButton.h"
 
 #import "Quest.h"
 
@@ -32,14 +34,8 @@
         // Custom initialization
         self.title = @"Create a Quest";
         self.view.backgroundColor = [UIColor colorWithHexString:@"eeeeee"];
-        
-        UIView * cancelView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        UIButton * cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        [cancelButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-        [cancelButton setImage:[UIImage imageNamed:@"cancel_button"] forState:UIControlStateNormal];
-        [cancelButton addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
-        [cancelView addSubview:cancelButton];
-        UIBarButtonItem * cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelView];
+
+        UIBarButtonItem * cancelButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"Cancel"] forState:UIControlStateNormal target:self action:@selector(close)];
         self.navigationItem.leftBarButtonItem = cancelButtonItem;
         
         UIView * checkmarkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
@@ -53,7 +49,8 @@
         UIBarButtonItem * checkmarkButtonItem = [[UIBarButtonItem alloc] initWithCustomView:checkmarkView];
         self.navigationItem.rightBarButtonItem = checkmarkButtonItem;
         
-        [self.titleTextField setFont:[UIFont fontWithName:@"Myriad Web Pro" size:17]];
+        
+        [self.titleTextField setFont:[UIFont fontWithName:@"Avenir-Black" size:17]];
         [self.titleTextField addTarget:self action:@selector(titleTextFieldChanged) forControlEvents:UIControlEventEditingChanged];
         [self.titleTextField setTextEdgeInsets:UIEdgeInsetsMake(15, 15, 0, 0)];
         [self.titleTextField setClearButtonEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
@@ -61,7 +58,7 @@
         self.titleTextField.layer.borderWidth = 1;
         [self.titleTextField setDelegate:self];
         
-        [self.descriptionTextField setFont:[UIFont fontWithName:@"Myriad Web Pro" size:14]];
+        [self.descriptionTextField setFont:[UIFont fontWithName:@"Avenir-Black" size:14]];
         [self.descriptionTextField setTextEdgeInsets:UIEdgeInsetsMake(15, 15, 0, 0)];
         self.descriptionTextField.layer.borderColor = [UIColor colorWithHexString:@"cccccc"].CGColor;
         self.descriptionTextField.layer.borderWidth = 1;
@@ -114,6 +111,12 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)next{
+    cancelled = YES;
+    QuestTableViewController * questTableViewController = [QuestTableViewController viewControllerForQuest:self.quest];
+    [self.navigationController pushViewController:questTableViewController animated:YES];
+}
+
 -(void)onKeyboardHide:(NSNotification *)notification
 {
     if (cancelled) {
@@ -126,14 +129,14 @@
 -(void)done{
     SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Creating Quest..." loading:YES];
 	[hud show];
-    Quest * newQuest = [Quest object];
-    newQuest.name = self.titleTextField.text;
-    newQuest.description = self.descriptionTextField.text;
-    newQuest.owner = [PFUser currentUser];
-    [newQuest saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
+    self.quest = [Quest object];
+    self.quest.name = self.titleTextField.text;
+    self.quest.description = self.descriptionTextField.text;
+    self.quest.owner = [PFUser currentUser];
+//    [self.quest saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
         [hud completeAndDismissWithTitle:@"Created!"];
-        [self close];
-    }];
+        [self next];
+//    }];
 }
 
 - (void)viewDidUnload {

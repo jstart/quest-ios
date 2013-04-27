@@ -15,5 +15,6 @@ pod 'XCDFormInputAccessoryView', '~> 1.0.0'
 pod 'SVPullToRefresh'
 pod 'Foursquare-API-v2', :podspec => "Local Podspecs/Foursquare-API-V2.podspec"
 pod 'UISS', '~> 1.1.0'
+pod 'StyledTableViewCell-for-iOS', '~> 1.0'
 
 

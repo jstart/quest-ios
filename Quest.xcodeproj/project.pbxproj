@@ -7,7 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232CDCB91725CA0100BBB880 /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 232CDCB71725CA0100BBB880 /* Cancel.png */; };
+		232CDCBA1725CA0100BBB880 /* Cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 232CDCB81725CA0100BBB880 /* Cancel@2x.png */; };
+		232CDCBF1725CF1200BBB880 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 232CDCBB1725CF1200BBB880 /* Back.png */; };
+		232CDCC01725CF1200BBB880 /* Back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 232CDCBC1725CF1200BBB880 /* Back@2x.png */; };
+		232CDCC11725CF1200BBB880 /* Forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 232CDCBD1725CF1200BBB880 /* Forward.png */; };
+		232CDCC21725CF1200BBB880 /* Forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 232CDCBE1725CF1200BBB880 /* Forward@2x.png */; };
+		232CDCC51725D47F00BBB880 /* WaypointStyledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 232CDCC41725D47F00BBB880 /* WaypointStyledTableViewCell.m */; };
+		23476E74171F64CC0018F3AF /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E6A171F64CC0018F3AF /* Icon-72.png */; };
+		23476E75171F64CC0018F3AF /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E6B171F64CC0018F3AF /* Icon-72@2x.png */; };
+		23476E76171F64CC0018F3AF /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E6C171F64CC0018F3AF /* Icon-Small-50.png */; };
+		23476E77171F64CC0018F3AF /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E6D171F64CC0018F3AF /* Icon-Small-50@2x.png */; };
+		23476E78171F64CC0018F3AF /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E6E171F64CC0018F3AF /* Icon-Small.png */; };
+		23476E79171F64CC0018F3AF /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E6F171F64CC0018F3AF /* Icon-Small@2x.png */; };
+		23476E7A171F64CC0018F3AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E70171F64CC0018F3AF /* Icon.png */; };
+		23476E7B171F64CC0018F3AF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E71171F64CC0018F3AF /* Icon@2x.png */; };
+		23476E7C171F64CC0018F3AF /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E72171F64CC0018F3AF /* iTunesArtwork.png */; };
+		23476E7D171F64CC0018F3AF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E73171F64CC0018F3AF /* iTunesArtwork@2x.png */; };
+		23476E84172099850018F3AF /* QuestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23476E83172099850018F3AF /* QuestTableViewController.m */; };
+		2357F541172A11C200B59ADB /* AddWaypointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2357F540172A11C200B59ADB /* AddWaypointViewController.m */; };
 		239A8589171764980091AC34 /* Waypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 239A8588171764980091AC34 /* Waypoint.m */; };
+		239A858E1718A5590091AC34 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = 239A858D1718A5590091AC34 /* uiss.json */; };
+		239A85921718B7580091AC34 /* CALIBRI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 239A85901718B7580091AC34 /* CALIBRI.TTF */; };
+		239A85931718B7580091AC34 /* CALIBRIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 239A85911718B7580091AC34 /* CALIBRIB.TTF */; };
+		239A8599171C852C0091AC34 /* quest-navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 239A8598171C852C0091AC34 /* quest-navbar@2x.png */; };
 		23A889E7170E1B850045CB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E6170E1B850045CB71 /* UIKit.framework */; };
 		23A889E9170E1B850045CB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E8170E1B850045CB71 /* Foundation.framework */; };
 		23A889EB170E1B850045CB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889EA170E1B850045CB71 /* CoreGraphics.framework */; };
@@ -39,6 +62,20 @@
 		23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A48170E74710045CB71 /* SampleImage2.png */; };
 		23A88A52170E75550045CB71 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A51170E75550045CB71 /* Quest.m */; };
 		23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */; };
+		23EBBBD1171E08A500AAEC77 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBCF171E08A500AAEC77 /* Settings.png */; };
+		23EBBBD2171E08A500AAEC77 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBD0171E08A500AAEC77 /* Settings@2x.png */; };
+		23EBBBD6171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EBBBD5171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m */; };
+		23EBBBD9171E0F2100AAEC77 /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBD7171E0F2100AAEC77 /* Add.png */; };
+		23EBBBDA171E0F2100AAEC77 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBD8171E0F2100AAEC77 /* Add@2x.png */; };
+		23EBBBE0171E29EC00AAEC77 /* QuestStyledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EBBBDF171E29EC00AAEC77 /* QuestStyledTableViewCell.m */; };
+		23EBBBE4171E2C7000AAEC77 /* UACellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EBBBE2171E2C0600AAEC77 /* UACellBackgroundView.m */; };
+		23EBBBE7171E322200AAEC77 /* agsquare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBE5171E322200AAEC77 /* agsquare@2x.png */; };
+		23EBBBE8171E322200AAEC77 /* agsquare.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBE6171E322200AAEC77 /* agsquare.png */; };
+		23EBBBEB171E3C4600AAEC77 /* navbarShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBE9171E3C4600AAEC77 /* navbarShadow.png */; };
+		23EBBBEC171E3C4600AAEC77 /* navbarShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBEA171E3C4600AAEC77 /* navbarShadow@2x.png */; };
+		23EBBBEE171E3E1800AAEC77 /* quest-navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBED171E3E1800AAEC77 /* quest-navbar.png */; };
+		23EBBBF1171E3EC000AAEC77 /* pw_maze_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */; };
+		23EBBBF2171E3EC000AAEC77 /* pw_maze_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */; };
 		DC3E0CFEA7544E75AB385A48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF73FE1EE734EFA873EB83E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +90,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232CDCB71725CA0100BBB880 /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel.png; sourceTree = "<group>"; };
+		232CDCB81725CA0100BBB880 /* Cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cancel@2x.png"; sourceTree = "<group>"; };
+		232CDCBB1725CF1200BBB880 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
+		232CDCBC1725CF1200BBB880 /* Back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back@2x.png"; sourceTree = "<group>"; };
+		232CDCBD1725CF1200BBB880 /* Forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Forward.png; sourceTree = "<group>"; };
+		232CDCBE1725CF1200BBB880 /* Forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forward@2x.png"; sourceTree = "<group>"; };
+		232CDCC31725D47F00BBB880 /* WaypointStyledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaypointStyledTableViewCell.h; path = Subclasses/WaypointStyledTableViewCell.h; sourceTree = "<group>"; };
+		232CDCC41725D47F00BBB880 /* WaypointStyledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaypointStyledTableViewCell.m; path = Subclasses/WaypointStyledTableViewCell.m; sourceTree = "<group>"; };
+		23476E6A171F64CC0018F3AF /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		23476E6B171F64CC0018F3AF /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		23476E6C171F64CC0018F3AF /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		23476E6D171F64CC0018F3AF /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		23476E6E171F64CC0018F3AF /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		23476E6F171F64CC0018F3AF /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		23476E70171F64CC0018F3AF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		23476E71171F64CC0018F3AF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		23476E72171F64CC0018F3AF /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		23476E73171F64CC0018F3AF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		23476E82172099850018F3AF /* QuestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestTableViewController.h; sourceTree = "<group>"; };
+		23476E83172099850018F3AF /* QuestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewController.m; sourceTree = "<group>"; };
+		2357F53F172A11C200B59ADB /* AddWaypointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWaypointViewController.h; sourceTree = "<group>"; };
+		2357F540172A11C200B59ADB /* AddWaypointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWaypointViewController.m; sourceTree = "<group>"; };
 		239A8587171764980091AC34 /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waypoint.h; path = Models/Waypoint.h; sourceTree = "<group>"; };
 		239A8588171764980091AC34 /* Waypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Waypoint.m; path = Models/Waypoint.m; sourceTree = "<group>"; };
+		239A858D1718A5590091AC34 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uiss.json; path = Resources/Stylesheets/uiss.json; sourceTree = "<group>"; };
+		239A85901718B7580091AC34 /* CALIBRI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = CALIBRI.TTF; path = Resources/Fonts/CALIBRI.TTF; sourceTree = "<group>"; };
+		239A85911718B7580091AC34 /* CALIBRIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = CALIBRIB.TTF; path = Resources/Fonts/CALIBRIB.TTF; sourceTree = "<group>"; };
+		239A8598171C852C0091AC34 /* quest-navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quest-navbar@2x.png"; sourceTree = "<group>"; };
 		23A889E3170E1B850045CB71 /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A889E6170E1B850045CB71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		23A889E8170E1B850045CB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +157,23 @@
 		23A88A51170E75550045CB71 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quest.m; path = Models/Quest.m; sourceTree = "<group>"; };
 		23A88A54170F5FC00045CB71 /* RegisterSubclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterSubclasses.h; path = Utilities/RegisterSubclasses.h; sourceTree = "<group>"; };
 		23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterSubclasses.m; path = Utilities/RegisterSubclasses.m; sourceTree = "<group>"; };
+		23EBBBCF171E08A500AAEC77 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		23EBBBD0171E08A500AAEC77 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
+		23EBBBD4171E09A300AAEC77 /* UIBarButtonItem+ImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ImageButton.h"; sourceTree = "<group>"; };
+		23EBBBD5171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ImageButton.m"; sourceTree = "<group>"; };
+		23EBBBD7171E0F2100AAEC77 /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add.png; sourceTree = "<group>"; };
+		23EBBBD8171E0F2100AAEC77 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
+		23EBBBDE171E29EC00AAEC77 /* QuestStyledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestStyledTableViewCell.h; path = Subclasses/QuestStyledTableViewCell.h; sourceTree = "<group>"; };
+		23EBBBDF171E29EC00AAEC77 /* QuestStyledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestStyledTableViewCell.m; path = Subclasses/QuestStyledTableViewCell.m; sourceTree = "<group>"; };
+		23EBBBE1171E2C0600AAEC77 /* UACellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UACellBackgroundView.h; path = Subclasses/UACellBackgroundView.h; sourceTree = "<group>"; };
+		23EBBBE2171E2C0600AAEC77 /* UACellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UACellBackgroundView.m; path = Subclasses/UACellBackgroundView.m; sourceTree = "<group>"; };
+		23EBBBE5171E322200AAEC77 /* agsquare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "agsquare@2x.png"; sourceTree = "<group>"; };
+		23EBBBE6171E322200AAEC77 /* agsquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agsquare.png; sourceTree = "<group>"; };
+		23EBBBE9171E3C4600AAEC77 /* navbarShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbarShadow.png; sourceTree = "<group>"; };
+		23EBBBEA171E3C4600AAEC77 /* navbarShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbarShadow@2x.png"; sourceTree = "<group>"; };
+		23EBBBED171E3E1800AAEC77 /* quest-navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quest-navbar.png"; sourceTree = "<group>"; };
+		23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pw_maze_black.png; sourceTree = "<group>"; };
+		23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pw_maze_black@2x.png"; sourceTree = "<group>"; };
 		387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DDF73FE1EE734EFA873EB83E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +203,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23476E69171F64CC0018F3AF /* App Icon [Squared] */ = {
+			isa = PBXGroup;
+			children = (
+				23476E6A171F64CC0018F3AF /* Icon-72.png */,
+				23476E6B171F64CC0018F3AF /* Icon-72@2x.png */,
+				23476E6C171F64CC0018F3AF /* Icon-Small-50.png */,
+				23476E6D171F64CC0018F3AF /* Icon-Small-50@2x.png */,
+				23476E6E171F64CC0018F3AF /* Icon-Small.png */,
+				23476E6F171F64CC0018F3AF /* Icon-Small@2x.png */,
+				23476E70171F64CC0018F3AF /* Icon.png */,
+				23476E71171F64CC0018F3AF /* Icon@2x.png */,
+				23476E72171F64CC0018F3AF /* iTunesArtwork.png */,
+				23476E73171F64CC0018F3AF /* iTunesArtwork@2x.png */,
+			);
+			path = "App Icon [Squared]";
+			sourceTree = "<group>";
+		};
+		239A858C1718A5440091AC34 /* Stylesheets */ = {
+			isa = PBXGroup;
+			children = (
+				239A858D1718A5590091AC34 /* uiss.json */,
+			);
+			name = Stylesheets;
+			sourceTree = "<group>";
+		};
+		239A858F1718B7370091AC34 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				239A85901718B7580091AC34 /* CALIBRI.TTF */,
+				239A85911718B7580091AC34 /* CALIBRIB.TTF */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		239A85941718C2FE0091AC34 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				23EBBBE1171E2C0600AAEC77 /* UACellBackgroundView.h */,
+				23EBBBE2171E2C0600AAEC77 /* UACellBackgroundView.m */,
+				23EBBBDE171E29EC00AAEC77 /* QuestStyledTableViewCell.h */,
+				23EBBBDF171E29EC00AAEC77 /* QuestStyledTableViewCell.m */,
+				232CDCC31725D47F00BBB880 /* WaypointStyledTableViewCell.h */,
+				232CDCC41725D47F00BBB880 /* WaypointStyledTableViewCell.m */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
 		23A889DA170E1B850045CB71 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +285,8 @@
 		23A889EC170E1B850045CB71 /* Quest */ = {
 			isa = PBXGroup;
 			children = (
+				23EBBBD3171E096D00AAEC77 /* Categories */,
+				239A85941718C2FE0091AC34 /* Subclasses */,
 				23A88A53170F5FA60045CB71 /* Utilities */,
 				23A88A4F170E753C0045CB71 /* Models */,
 				23A88A34170E6F4D0045CB71 /* ViewControllers */,
@@ -218,6 +347,8 @@
 		23A88A28170E2FE10045CB71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				239A858F1718B7370091AC34 /* Fonts */,
+				239A858C1718A5440091AC34 /* Stylesheets */,
 				23A88A42170E74710045CB71 /* Images */,
 				23A88A29170E2FE70045CB71 /* plists */,
 			);
@@ -247,6 +378,10 @@
 				23A88A37170E6F4D0045CB71 /* CreateQuestViewController.h */,
 				23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */,
 				23A88A39170E6F4D0045CB71 /* CreateQuestViewController.xib */,
+				23476E82172099850018F3AF /* QuestTableViewController.h */,
+				23476E83172099850018F3AF /* QuestTableViewController.m */,
+				2357F53F172A11C200B59ADB /* AddWaypointViewController.h */,
+				2357F540172A11C200B59ADB /* AddWaypointViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +389,25 @@
 		23A88A42170E74710045CB71 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				23476E69171F64CC0018F3AF /* App Icon [Squared] */,
+				23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */,
+				23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */,
+				232CDCB71725CA0100BBB880 /* Cancel.png */,
+				232CDCB81725CA0100BBB880 /* Cancel@2x.png */,
+				23EBBBE9171E3C4600AAEC77 /* navbarShadow.png */,
+				23EBBBEA171E3C4600AAEC77 /* navbarShadow@2x.png */,
+				23EBBBE5171E322200AAEC77 /* agsquare@2x.png */,
+				23EBBBE6171E322200AAEC77 /* agsquare.png */,
+				23EBBBD7171E0F2100AAEC77 /* Add.png */,
+				23EBBBD8171E0F2100AAEC77 /* Add@2x.png */,
+				23EBBBCF171E08A500AAEC77 /* Settings.png */,
+				23EBBBD0171E08A500AAEC77 /* Settings@2x.png */,
+				232CDCBB1725CF1200BBB880 /* Back.png */,
+				232CDCBC1725CF1200BBB880 /* Back@2x.png */,
+				232CDCBD1725CF1200BBB880 /* Forward.png */,
+				232CDCBE1725CF1200BBB880 /* Forward@2x.png */,
+				23EBBBED171E3E1800AAEC77 /* quest-navbar.png */,
+				239A8598171C852C0091AC34 /* quest-navbar@2x.png */,
 				23A88A43170E74710045CB71 /* checkmark_active.png */,
 				23A88A44170E74710045CB71 /* checkmark_active@2x.png */,
 				23A88A45170E74710045CB71 /* checkmark_inactive.png */,
@@ -285,6 +439,15 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		23EBBBD3171E096D00AAEC77 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				23EBBBD4171E09A300AAEC77 /* UIBarButtonItem+ImageButton.h */,
+				23EBBBD5171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,7 +458,6 @@
 				23A889DF170E1B850045CB71 /* Sources */,
 				23A889E0170E1B850045CB71 /* Frameworks */,
 				23A889E1170E1B850045CB71 /* Resources */,
-				7DC796179B164175A07373A9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -373,6 +535,37 @@
 				23A88A4C170E74710045CB71 /* checkmark_inactive@2x.png in Resources */,
 				23A88A4D170E74710045CB71 /* SampleImage1.png in Resources */,
 				23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */,
+				239A858E1718A5590091AC34 /* uiss.json in Resources */,
+				239A85921718B7580091AC34 /* CALIBRI.TTF in Resources */,
+				239A85931718B7580091AC34 /* CALIBRIB.TTF in Resources */,
+				239A8599171C852C0091AC34 /* quest-navbar@2x.png in Resources */,
+				23EBBBD1171E08A500AAEC77 /* Settings.png in Resources */,
+				23EBBBD2171E08A500AAEC77 /* Settings@2x.png in Resources */,
+				23EBBBD9171E0F2100AAEC77 /* Add.png in Resources */,
+				23EBBBDA171E0F2100AAEC77 /* Add@2x.png in Resources */,
+				23EBBBE7171E322200AAEC77 /* agsquare@2x.png in Resources */,
+				23EBBBE8171E322200AAEC77 /* agsquare.png in Resources */,
+				23EBBBEB171E3C4600AAEC77 /* navbarShadow.png in Resources */,
+				23EBBBEC171E3C4600AAEC77 /* navbarShadow@2x.png in Resources */,
+				23EBBBEE171E3E1800AAEC77 /* quest-navbar.png in Resources */,
+				23EBBBF1171E3EC000AAEC77 /* pw_maze_black.png in Resources */,
+				23EBBBF2171E3EC000AAEC77 /* pw_maze_black@2x.png in Resources */,
+				23476E74171F64CC0018F3AF /* Icon-72.png in Resources */,
+				23476E75171F64CC0018F3AF /* Icon-72@2x.png in Resources */,
+				23476E76171F64CC0018F3AF /* Icon-Small-50.png in Resources */,
+				23476E77171F64CC0018F3AF /* Icon-Small-50@2x.png in Resources */,
+				23476E78171F64CC0018F3AF /* Icon-Small.png in Resources */,
+				23476E79171F64CC0018F3AF /* Icon-Small@2x.png in Resources */,
+				23476E7A171F64CC0018F3AF /* Icon.png in Resources */,
+				23476E7B171F64CC0018F3AF /* Icon@2x.png in Resources */,
+				23476E7C171F64CC0018F3AF /* iTunesArtwork.png in Resources */,
+				23476E7D171F64CC0018F3AF /* iTunesArtwork@2x.png in Resources */,
+				232CDCB91725CA0100BBB880 /* Cancel.png in Resources */,
+				232CDCBA1725CA0100BBB880 /* Cancel@2x.png in Resources */,
+				232CDCBF1725CF1200BBB880 /* Back.png in Resources */,
+				232CDCC01725CF1200BBB880 /* Back@2x.png in Resources */,
+				232CDCC11725CF1200BBB880 /* Forward.png in Resources */,
+				232CDCC21725CF1200BBB880 /* Forward@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,20 +593,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		7DC796179B164175A07373A9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -429,6 +608,12 @@
 				23A88A52170E75550045CB71 /* Quest.m in Sources */,
 				23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */,
 				239A8589171764980091AC34 /* Waypoint.m in Sources */,
+				23EBBBD6171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m in Sources */,
+				23EBBBE0171E29EC00AAEC77 /* QuestStyledTableViewCell.m in Sources */,
+				23EBBBE4171E2C7000AAEC77 /* UACellBackgroundView.m in Sources */,
+				23476E84172099850018F3AF /* QuestTableViewController.m in Sources */,
+				232CDCC51725D47F00BBB880 /* WaypointStyledTableViewCell.m in Sources */,
+				2357F541172A11C200B59ADB /* AddWaypointViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +683,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Truman (XL8C53TT76)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Truman (XL8C53TT76)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -513,6 +699,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "4CE84FEF-4831-4202-9C48-BA81756BF711";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4CE84FEF-4831-4202-9C48-BA81756BF711";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -530,7 +718,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christopher Truman (XL8C53TT76)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christopher Truman (XL8C53TT76)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -538,6 +727,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "4CE84FEF-4831-4202-9C48-BA81756BF711";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4CE84FEF-4831-4202-9C48-BA81756BF711";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

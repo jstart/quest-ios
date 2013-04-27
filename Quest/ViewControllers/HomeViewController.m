@@ -16,19 +16,17 @@
 #import "CreateQuestViewController.h"
 #import "SVPullToRefresh.h"
 #import "HMSegmentedControl.h"
+#import "QuestStyledTableViewCell.h"
 #import "Foursquare2.h"
+#import "UIBarButtonItem+ImageButton.h"
+#import "UIColor+Expanded.h"
 
 #import "Quest.h"
 
 @interface HomeViewController () <MYIntroductionDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *createButon;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) HMSegmentedControl *segmentedControl;
-
-- (IBAction)pressedSettings:(id)sender;
-- (IBAction)pressedCreate:(id)sender;
 
 @property (nonatomic, strong) UIButton * loginButton;
 @property (nonatomic, strong) UIButton * foursquareLoginButton;
@@ -39,21 +37,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = @"Quest";
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"606a76"]];
+    self.navigationController.navigationBar.shadowImage = [UIImage imageNamed:@"navbarShadow"];
+
+    UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+    [backgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"agsquare"]]];
+    self.tableView.backgroundView = backgroundView;
     
 	// Do any additional setup after loading the view, typically from a nib.
     if (![PFUser currentUser]) {
         [self createIntroductionView];
     }
-    
-    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Questing", @"Creating", @"Viewing"]];
-    [self.segmentedControl setSelectionLocation:HMSegmentedControlSelectionLocationDown];
+        
+    self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Joined", @"Created", @"Viewing"]];
+    [self.segmentedControl setSelectionLocation:HMSegmentedControlSelectionLocationUp];
     [self.segmentedControl setSelectionStyle:HMSegmentedControlSelectionStyleBox];
-    [self.segmentedControl setFrame:CGRectMake(0, 44, 320, 50)];
+    [self.segmentedControl setFrame:CGRectMake(0, 0, 320, 50)];
     [self.segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [self.segmentedControl.layer setShadowColor:[UIColor blackColor].CGColor];
+    [self.segmentedControl.layer setShadowOffset:CGSizeMake(1, 1)];
+    [self.segmentedControl.layer setShadowOpacity:0.5];
+    [self.segmentedControl.layer setShadowRadius:1.0];
     [self.view addSubview:self.segmentedControl];
-    
+        
     [self.tableView addPullToRefreshWithActionHandler:^(){
         PFQuery * query = [Quest query];
         if ([PFUser currentUser]) {
@@ -92,6 +103,17 @@
     [self.tableView addInfiniteScrollingWithActionHandler:^(){
         [self.tableView.infiniteScrollingView stopAnimating];
     }];
+    
+    [self.tableView.pullToRefreshView setBackgroundColor:[UIColor colorWithHexString:@"4d5967"]];
+    [self.tableView.pullToRefreshView setTextColor:[UIColor whiteColor]];
+    [self.tableView.pullToRefreshView setArrowColor:[UIColor whiteColor]];
+    
+    UIBarButtonItem * settingsButton = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"Settings"] forState:UIControlStateNormal target:self action:@selector(showSettings)];
+    self.navigationItem.leftBarButtonItem = settingsButton;
+    
+    UIBarButtonItem * createButton = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"Add"] forState:UIControlStateNormal target:self action:@selector(showCreate)];
+    self.navigationItem.rightBarButtonItem = createButton;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -116,6 +138,18 @@
     
     //STEP 3: Show introduction view
     [self.introductionView showInView:self.view];
+}
+
+
+- (void)showCreate {
+    CreateQuestViewController * createQuestViewController = [[CreateQuestViewController alloc] initWithNibName:@"CreateQuestViewController" bundle:[NSBundle mainBundle]];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:createQuestViewController];
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+-(void)showSettings{
+    
 }
 
 #pragma mark - MYIntroductionViewDelegate
@@ -198,9 +232,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString * cellIdentifier = @"cellIdentifier";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    QuestStyledTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[QuestStyledTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//        [cell setSelectedBackgroundViewGradientColors:[NSArray arrayWithObjects:[UIColor colorWithHexString:@"57b6ad"].CGColor, [UIColor colorWithHexString:@"29d4be"].CGColor, nil]];
+//        [cell setSelectionGradientDirection:StyledTableViewCellSelectionGradientDirectionVertical];
     }
     Quest * quest = [self.quests objectAtIndex:indexPath.row];
     cell.textLabel.text = quest.name;
@@ -212,20 +248,20 @@
     
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 88.0f;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pressedSettings:(id)sender {
-    
-}
-
-- (IBAction)pressedCreate:(id)sender {
-    CreateQuestViewController * createQuestViewController = [[CreateQuestViewController alloc] initWithNibName:@"CreateQuestViewController" bundle:[NSBundle mainBundle]];
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:createQuestViewController];
-
-    [self presentViewController:navigationController animated:YES completion:nil];
-}
 @end

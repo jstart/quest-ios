@@ -10,6 +10,8 @@
 
 @class HomeViewController;
 
+@class UISS;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -17,5 +19,7 @@
 @property (strong, nonatomic) UINavigationController * navigationController;
 
 @property (strong, nonatomic) HomeViewController *viewController;
+
+@property (strong, nonatomic) UISS * userInterfaceStyleSheets;
 
 @end
