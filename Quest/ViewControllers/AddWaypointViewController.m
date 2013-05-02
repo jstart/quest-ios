@@ -41,8 +41,8 @@
 
 #pragma mark - MLPAutoCompleteTextField
 - (NSArray *)possibleAutoCompleteSuggestionsForString:(NSString *)string{
-    [Foursquare2 searchVenuesNearByLatitude:<#(NSNumber *)#> longitude:<#(NSNumber *)#> accuracyLL:<#(NSNumber *)#> altitude:<#(NSNumber *)#> accuracyAlt:<#(NSNumber *)#> query:<#(NSString *)#> limit:<#(NSNumber *)#> intent:intentBrowse radius:@(50) callback:^(BOOL success, id result){
-    }];
+//    [Foursquare2 searchVenuesNearByLatitude:<#(NSNumber *)#> longitude:<#(NSNumber *)#> accuracyLL:<#(NSNumber *)#> altitude:<#(NSNumber *)#> accuracyAlt:<#(NSNumber *)#> query:<#(NSString *)#> limit:<#(NSNumber *)#> intent:intentBrowse radius:@(50) callback:^(BOOL success, id result){
+//    }];
     return @[];
 }
 

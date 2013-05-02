@@ -20,6 +20,7 @@
 #import "Foursquare2.h"
 #import "UIBarButtonItem+ImageButton.h"
 #import "UIColor+Expanded.h"
+#import "RCLocationManager.h"
 
 #import "Quest.h"
 
@@ -52,6 +53,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     if (![PFUser currentUser]) {
         [self createIntroductionView];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
         
     self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Joined", @"Created", @"Viewing"]];
@@ -114,6 +116,10 @@
     UIBarButtonItem * createButton = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"Add"] forState:UIControlStateNormal target:self action:@selector(showCreate)];
     self.navigationItem.rightBarButtonItem = createButton;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(facebookLogin) name:@"FacebookLogin" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(foursquareLogin) name:@"FoursquareLogin" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationAuthorization) name:@"LocationRequired" object:nil];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -129,9 +135,9 @@
     NSArray * panelArray = [IntroductionPanelCreator createIntroductionPanelsFromArray:introductionPlistArray];
     
     self.introductionView = [[MYIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) headerText:@"Quest" panels:panelArray languageDirection:MYLanguageDirectionLeftToRight];
-    self.introductionView.SkipButton.hidden = YES;
+    self.introductionView.skipButton.hidden = YES;
     
-    [self.introductionView setBackgroundColor:[UIColor grayColor]];
+    [self.introductionView setBackgroundColor:[UIColor colorWithHexString:@"8bcfb6"]];
     
     //Set delegate to self for callbacks (optional)
     self.introductionView.delegate = self;
@@ -164,61 +170,49 @@
 }
 
 -(void)introductionDidChangeToPanel:(MYIntroductionPanel *)panel withIndex:(NSInteger)panelIndex{
-    NSLog(@"%@ \nPanelIndex: %d", panel.Description, panelIndex);
-    if (panelIndex == 1 && ![[self.introductionView subviews] containsObject:self.loginButton]) {
-        self.loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.loginButton.frame = CGRectMake(self.introductionView.ContentScrollView.contentOffset.x + 320/2 - 200/2, self.introductionView.frame.size.height - 50 - 65 - 36 - 100, 200, 50);
-        [self.loginButton setTitle:@"Login With Facebook" forState:UIControlStateNormal];
-        [self.loginButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
-            [PFFacebookUtils logInWithPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
-                if (!user) {
-                    NSLog(@"Uh oh. The user cancelled the Facebook login.");
-                } else if (user.isNew) {
-                    NSLog(@"User signed up and logged in through Facebook!");
-                    [self.introductionView hideWithFadeOutDuration:0.2];
-                } else {
-                    NSLog(@"User logged in through Facebook!");
-                    [user save];
-                    [self.introductionView hideWithFadeOutDuration:0.2];
-                }
-            }];
-        }];
-        self.loginButton.alpha = 0.0;
-        [self.introductionView.ContentScrollView addSubview:self.loginButton];
-        [UIView animateWithDuration:0.2 animations:^() {
-            self.loginButton.alpha = 1.0;
-        }];
-    }
-    else{
-        [UIView animateWithDuration:0.2 animations:^() {
-            self.loginButton.alpha = 0.0;
-        }];
-    }
-    if (panelIndex == 2 && ![[self.introductionView subviews] containsObject:self.loginButton]) {
-        self.foursquareLoginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.foursquareLoginButton.frame = CGRectMake(self.introductionView.ContentScrollView.contentOffset.x + 320/2 - 200/2, self.introductionView.frame.size.height - 50 - 65 - 36 - 100, 200, 50);
-        [self.foursquareLoginButton setTitle:@"Login With Foursquare" forState:UIControlStateNormal];
-        [self.foursquareLoginButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.2];
+//    panel.inputButton.alpha = 1.0;
+//    [UIView commitAnimations];
+}
+
+-(void)facebookLogin{
+    [PFFacebookUtils logInWithPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
             [self.introductionView hideWithFadeOutDuration:0.2];
-            [Foursquare2 authorizeWithCallback:^(BOOL success, NSError * error){
-                if (!error) {
-                    NSLog(@"Uh oh. The user cancelled the Foursquare login. %@", error);
-                } else if (success) {
-                    NSLog(@"New User logged in with foursquare.");
-                }
-            } fromViewController:self];
-        }];
-        self.foursquareLoginButton.alpha = 0.0;
-        [self.introductionView.ContentScrollView addSubview:self.foursquareLoginButton];
-        [UIView animateWithDuration:0.2 animations:^() {
-            self.foursquareLoginButton.alpha = 1.0;
-        }];
-    }
-    else{
-        [UIView animateWithDuration:0.2 animations:^() {
-            self.foursquareLoginButton.alpha = 0.0;
-        }];
-    }
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            [user save];
+            [self.introductionView hideWithFadeOutDuration:0.2];
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+        }
+    }];
+}
+
+-(void)foursquareLogin{
+    [Foursquare2 authorizeWithCallback:^(BOOL success, NSError * error){
+        if (error) {
+            NSLog(@"Uh oh. The user cancelled the Foursquare login. %@", error);
+        } else if (success) {
+            NSLog(@"New User logged in with foursquare.");
+            [self.introductionView continueToNextPanel];
+        }
+    } fromViewController:self];
+}
+
+-(void)locationAuthorization{
+    [[RCLocationManager sharedManager] setPurpose:@"Quest would like to help guide you and your friends based on location."];
+    [[RCLocationManager sharedManager] setRegionDesiredAccuracy:50.0];
+    [[RCLocationManager sharedManager] startUpdatingLocationWithBlock:^(CLLocationManager * manager, CLLocation * newLocation, CLLocation * oldLocation){
+        [self.introductionView continueToNextPanel];
+        [[RCLocationManager sharedManager] stopUpdatingLocation];
+    } errorBlock:^(CLLocationManager * manager, NSError * error){
+
+    }];
 }
 
 -(void)segmentedControlChangedValue:(HMSegmentedControl *) segmentedControl{

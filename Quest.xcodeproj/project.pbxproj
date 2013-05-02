@@ -58,8 +58,6 @@
 		23A88A4A170E74710045CB71 /* checkmark_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A44170E74710045CB71 /* checkmark_active@2x.png */; };
 		23A88A4B170E74710045CB71 /* checkmark_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A45170E74710045CB71 /* checkmark_inactive.png */; };
 		23A88A4C170E74710045CB71 /* checkmark_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */; };
-		23A88A4D170E74710045CB71 /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A47170E74710045CB71 /* SampleImage1.png */; };
-		23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A48170E74710045CB71 /* SampleImage2.png */; };
 		23A88A52170E75550045CB71 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A51170E75550045CB71 /* Quest.m */; };
 		23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */; };
 		23EBBBD1171E08A500AAEC77 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBCF171E08A500AAEC77 /* Settings.png */; };
@@ -76,6 +74,10 @@
 		23EBBBEE171E3E1800AAEC77 /* quest-navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBED171E3E1800AAEC77 /* quest-navbar.png */; };
 		23EBBBF1171E3EC000AAEC77 /* pw_maze_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */; };
 		23EBBBF2171E3EC000AAEC77 /* pw_maze_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */; };
+		23F0E71D173324D9009E386F /* SampleImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 23F0E719173324D9009E386F /* SampleImage1.png */; };
+		23F0E71E173324D9009E386F /* SampleImage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23F0E71A173324D9009E386F /* SampleImage1@2x.png */; };
+		23F0E71F173324D9009E386F /* SampleImage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 23F0E71B173324D9009E386F /* SampleImage2.png */; };
+		23F0E720173324D9009E386F /* SampleImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23F0E71C173324D9009E386F /* SampleImage2@2x.png */; };
 		DC3E0CFEA7544E75AB385A48 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF73FE1EE734EFA873EB83E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -151,8 +153,6 @@
 		23A88A44170E74710045CB71 /* checkmark_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_active@2x.png"; sourceTree = "<group>"; };
 		23A88A45170E74710045CB71 /* checkmark_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_inactive.png; sourceTree = "<group>"; };
 		23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_inactive@2x.png"; sourceTree = "<group>"; };
-		23A88A47170E74710045CB71 /* SampleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage1.png; sourceTree = "<group>"; };
-		23A88A48170E74710045CB71 /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
 		23A88A50170E75550045CB71 /* Quest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quest.h; path = Models/Quest.h; sourceTree = "<group>"; };
 		23A88A51170E75550045CB71 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quest.m; path = Models/Quest.m; sourceTree = "<group>"; };
 		23A88A54170F5FC00045CB71 /* RegisterSubclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterSubclasses.h; path = Utilities/RegisterSubclasses.h; sourceTree = "<group>"; };
@@ -174,6 +174,10 @@
 		23EBBBED171E3E1800AAEC77 /* quest-navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quest-navbar.png"; sourceTree = "<group>"; };
 		23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pw_maze_black.png; sourceTree = "<group>"; };
 		23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pw_maze_black@2x.png"; sourceTree = "<group>"; };
+		23F0E719173324D9009E386F /* SampleImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage1.png; sourceTree = "<group>"; };
+		23F0E71A173324D9009E386F /* SampleImage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SampleImage1@2x.png"; sourceTree = "<group>"; };
+		23F0E71B173324D9009E386F /* SampleImage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SampleImage2.png; sourceTree = "<group>"; };
+		23F0E71C173324D9009E386F /* SampleImage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SampleImage2@2x.png"; sourceTree = "<group>"; };
 		387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DDF73FE1EE734EFA873EB83E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -412,8 +416,10 @@
 				23A88A44170E74710045CB71 /* checkmark_active@2x.png */,
 				23A88A45170E74710045CB71 /* checkmark_inactive.png */,
 				23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */,
-				23A88A47170E74710045CB71 /* SampleImage1.png */,
-				23A88A48170E74710045CB71 /* SampleImage2.png */,
+				23F0E719173324D9009E386F /* SampleImage1.png */,
+				23F0E71A173324D9009E386F /* SampleImage1@2x.png */,
+				23F0E71B173324D9009E386F /* SampleImage2.png */,
+				23F0E71C173324D9009E386F /* SampleImage2@2x.png */,
 			);
 			name = Images;
 			path = Resources/Images;
@@ -533,8 +539,6 @@
 				23A88A4A170E74710045CB71 /* checkmark_active@2x.png in Resources */,
 				23A88A4B170E74710045CB71 /* checkmark_inactive.png in Resources */,
 				23A88A4C170E74710045CB71 /* checkmark_inactive@2x.png in Resources */,
-				23A88A4D170E74710045CB71 /* SampleImage1.png in Resources */,
-				23A88A4E170E74710045CB71 /* SampleImage2.png in Resources */,
 				239A858E1718A5590091AC34 /* uiss.json in Resources */,
 				239A85921718B7580091AC34 /* CALIBRI.TTF in Resources */,
 				239A85931718B7580091AC34 /* CALIBRIB.TTF in Resources */,
@@ -566,6 +570,10 @@
 				232CDCC01725CF1200BBB880 /* Back@2x.png in Resources */,
 				232CDCC11725CF1200BBB880 /* Forward.png in Resources */,
 				232CDCC21725CF1200BBB880 /* Forward@2x.png in Resources */,
+				23F0E71D173324D9009E386F /* SampleImage1.png in Resources */,
+				23F0E71E173324D9009E386F /* SampleImage1@2x.png in Resources */,
+				23F0E71F173324D9009E386F /* SampleImage2.png in Resources */,
+				23F0E720173324D9009E386F /* SampleImage2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

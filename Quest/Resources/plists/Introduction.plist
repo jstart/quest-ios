@@ -4,20 +4,32 @@
 <array>
 	<array>
 		<dict>
+			<key>inputType</key>
+			<string>location</string>
+			<key>requiresInput</key>
+			<true/>
 			<key>text</key>
-			<string>step 1</string>
+			<string>Location Required</string>
 			<key>image</key>
 			<string>SampleImage1</string>
 		</dict>
 		<dict>
+			<key>inputType</key>
+			<string>foursquare</string>
+			<key>requiresInput</key>
+			<true/>
 			<key>text</key>
-			<string>step 2</string>
+			<string>Foursquare</string>
 			<key>image</key>
 			<string>SampleImage1</string>
 		</dict>
 		<dict>
+			<key>inputType</key>
+			<string>facebook</string>
+			<key>requiresInput</key>
+			<true/>
 			<key>text</key>
-			<string>step 3</string>
+			<string>Facebook</string>
 			<key>image</key>
 			<string>SampleImage2</string>
 		</dict>

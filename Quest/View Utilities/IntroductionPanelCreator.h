@@ -11,5 +11,6 @@
 @interface IntroductionPanelCreator : NSObject
 
 +(NSArray *)createIntroductionPanelsFromArray:(NSArray *) introductionArray;
++(UIButton *)buttonForInputType:(NSString*)inputType;
 
 @end
