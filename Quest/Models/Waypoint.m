@@ -10,7 +10,7 @@
 #import <Parse/PFObject+Subclass.h>
 
 @implementation Waypoint
-@dynamic name, foursquareVenueID, youtubeURLString, peopleAtPoint;
+@dynamic name, youtubeURLString, order, quest;
 
 + (NSString *)parseClassName {
     return @"Waypoint";

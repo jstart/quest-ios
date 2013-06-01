@@ -1,5 +1,5 @@
 //
-//  QuestTableViewController.h
+//  ActiveQuestViewController.h
 //  Quest
 //
 //  Created by Christopher Truman on 18/04/2013.
@@ -10,10 +10,10 @@
 
 @class Quest;
 
-@interface QuestTableViewController : UITableViewController
+@interface ActiveQuestViewController : UIViewController
 
 @property (nonatomic, strong) Quest * quest;
 
-+(QuestTableViewController *)viewControllerForQuest:(Quest *)quest;
++(ActiveQuestViewController *)viewControllerForQuest:(Quest *)quest;
 
 @end

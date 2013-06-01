@@ -8,12 +8,14 @@
 
 #import <Parse/Parse.h>
 
+@class Quest;
+
 @interface Waypoint : PFObject <PFSubclassing>
 + (NSString *)parseClassName;
 
 @property (nonatomic, strong) NSString * name;
-@property (nonatomic, strong) NSString * foursquareVenueID;
+@property (nonatomic, strong) NSNumber * order;
 @property (nonatomic, strong) NSString * youtubeURLString;
-@property (nonatomic, strong) PFRelation * peopleAtPoint;
+@property (nonatomic, strong) Quest * quest;
 
 @end

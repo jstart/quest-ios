@@ -24,13 +24,25 @@
 		23476E7B171F64CC0018F3AF /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E71171F64CC0018F3AF /* Icon@2x.png */; };
 		23476E7C171F64CC0018F3AF /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E72171F64CC0018F3AF /* iTunesArtwork.png */; };
 		23476E7D171F64CC0018F3AF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E73171F64CC0018F3AF /* iTunesArtwork@2x.png */; };
-		23476E84172099850018F3AF /* QuestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23476E83172099850018F3AF /* QuestTableViewController.m */; };
+		23476E84172099850018F3AF /* QuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23476E83172099850018F3AF /* QuestViewController.m */; };
 		2357F541172A11C200B59ADB /* AddWaypointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2357F540172A11C200B59ADB /* AddWaypointViewController.m */; };
 		239A8589171764980091AC34 /* Waypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 239A8588171764980091AC34 /* Waypoint.m */; };
 		239A858E1718A5590091AC34 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = 239A858D1718A5590091AC34 /* uiss.json */; };
 		239A85921718B7580091AC34 /* CALIBRI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 239A85901718B7580091AC34 /* CALIBRI.TTF */; };
 		239A85931718B7580091AC34 /* CALIBRIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 239A85911718B7580091AC34 /* CALIBRIB.TTF */; };
 		239A8599171C852C0091AC34 /* quest-navbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 239A8598171C852C0091AC34 /* quest-navbar@2x.png */; };
+		239CF67E1757313100BFB1C3 /* QuestActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF67D1757313100BFB1C3 /* QuestActivity.m */; };
+		239CF6811757CE7900BFB1C3 /* ActiveQuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF6801757CE7900BFB1C3 /* ActiveQuestViewController.m */; };
+		239CF6841757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF6831757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.m */; };
+		239CF6881757E4EE00BFB1C3 /* WaypointDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF6861757E4EE00BFB1C3 /* WaypointDetailViewController.m */; };
+		239CF6891757E4EE00BFB1C3 /* WaypointDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239CF6871757E4EE00BFB1C3 /* WaypointDetailViewController.xib */; };
+		239CF68C1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF68B1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.m */; };
+		239CF68F1757FBCF00BFB1C3 /* UINavigationController+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF68E1757FBCF00BFB1C3 /* UINavigationController+Orientation.m */; };
+		239CF692175809B000BFB1C3 /* quest-navbar-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 239CF690175809B000BFB1C3 /* quest-navbar-landscape.png */; };
+		239CF693175809B000BFB1C3 /* quest-navbar-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 239CF691175809B000BFB1C3 /* quest-navbar-landscape@2x.png */; };
+		239CF69717593DE500BFB1C3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 239CF69617593DE400BFB1C3 /* Settings.bundle */; };
+		239CF69C1759423C00BFB1C3 /* ImageUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 239CF6991759414300BFB1C3 /* ImageUploadManager.m */; };
+		239CF69E175942A200BFB1C3 /* ImageUploadManager.m in Resources */ = {isa = PBXBuildFile; fileRef = 239CF6991759414300BFB1C3 /* ImageUploadManager.m */; };
 		23A889E7170E1B850045CB71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E6170E1B850045CB71 /* UIKit.framework */; };
 		23A889E9170E1B850045CB71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889E8170E1B850045CB71 /* Foundation.framework */; };
 		23A889EB170E1B850045CB71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A889EA170E1B850045CB71 /* CoreGraphics.framework */; };
@@ -49,8 +61,6 @@
 		23A88A1B170E1B850045CB71 /* QuestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A1A170E1B850045CB71 /* QuestTests.m */; };
 		23A88A27170E2F7C0045CB71 /* IntroductionPanelCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A26170E2F7C0045CB71 /* IntroductionPanelCreator.m */; };
 		23A88A2B170E30030045CB71 /* Introduction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A2A170E30030045CB71 /* Introduction.plist */; };
-		23A88A3B170E6F4D0045CB71 /* CreateQuestViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A37170E6F4D0045CB71 /* CreateQuestViewController.h */; };
-		23A88A3C170E6F4D0045CB71 /* CreateQuestViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */; };
 		23A88A3D170E6F4D0045CB71 /* CreateQuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A39170E6F4D0045CB71 /* CreateQuestViewController.xib */; };
 		23A88A40170E6F5D0045CB71 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A3F170E6F5D0045CB71 /* HomeViewController.m */; };
 		23A88A41170E6FA40045CB71 /* CreateQuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */; };
@@ -60,6 +70,9 @@
 		23A88A4C170E74710045CB71 /* checkmark_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23A88A46170E74710045CB71 /* checkmark_inactive@2x.png */; };
 		23A88A52170E75550045CB71 /* Quest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A51170E75550045CB71 /* Quest.m */; };
 		23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */; };
+		23B4929B17594AF30019268E /* NSRunLoop+TimeOutAndFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B4929A17594AF30019268E /* NSRunLoop+TimeOutAndFlag.m */; };
+		23E2549F175554B8005EA046 /* AddWaypointViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23E2549E175554B8005EA046 /* AddWaypointViewController.xib */; };
+		23E254A317557813005EA046 /* Invite.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E254A217557813005EA046 /* Invite.m */; };
 		23EBBBD1171E08A500AAEC77 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBCF171E08A500AAEC77 /* Settings.png */; };
 		23EBBBD2171E08A500AAEC77 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23EBBBD0171E08A500AAEC77 /* Settings@2x.png */; };
 		23EBBBD6171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EBBBD5171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m */; };
@@ -110,8 +123,8 @@
 		23476E71171F64CC0018F3AF /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		23476E72171F64CC0018F3AF /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		23476E73171F64CC0018F3AF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		23476E82172099850018F3AF /* QuestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestTableViewController.h; sourceTree = "<group>"; };
-		23476E83172099850018F3AF /* QuestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestTableViewController.m; sourceTree = "<group>"; };
+		23476E82172099850018F3AF /* QuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestViewController.h; sourceTree = "<group>"; };
+		23476E83172099850018F3AF /* QuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestViewController.m; sourceTree = "<group>"; };
 		2357F53F172A11C200B59ADB /* AddWaypointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWaypointViewController.h; sourceTree = "<group>"; };
 		2357F540172A11C200B59ADB /* AddWaypointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWaypointViewController.m; sourceTree = "<group>"; };
 		239A8587171764980091AC34 /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waypoint.h; path = Models/Waypoint.h; sourceTree = "<group>"; };
@@ -120,6 +133,24 @@
 		239A85901718B7580091AC34 /* CALIBRI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = CALIBRI.TTF; path = Resources/Fonts/CALIBRI.TTF; sourceTree = "<group>"; };
 		239A85911718B7580091AC34 /* CALIBRIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = CALIBRIB.TTF; path = Resources/Fonts/CALIBRIB.TTF; sourceTree = "<group>"; };
 		239A8598171C852C0091AC34 /* quest-navbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quest-navbar@2x.png"; sourceTree = "<group>"; };
+		239CF67C1757313100BFB1C3 /* QuestActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestActivity.h; path = Models/QuestActivity.h; sourceTree = "<group>"; };
+		239CF67D1757313100BFB1C3 /* QuestActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestActivity.m; path = Models/QuestActivity.m; sourceTree = "<group>"; };
+		239CF67F1757CE7900BFB1C3 /* ActiveQuestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveQuestViewController.h; sourceTree = "<group>"; };
+		239CF6801757CE7900BFB1C3 /* ActiveQuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActiveQuestViewController.m; sourceTree = "<group>"; };
+		239CF6821757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveWaypointStyledTableViewCell.h; path = Subclasses/ActiveWaypointStyledTableViewCell.h; sourceTree = "<group>"; };
+		239CF6831757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveWaypointStyledTableViewCell.m; path = Subclasses/ActiveWaypointStyledTableViewCell.m; sourceTree = "<group>"; };
+		239CF6851757E4EE00BFB1C3 /* WaypointDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaypointDetailViewController.h; sourceTree = "<group>"; };
+		239CF6861757E4EE00BFB1C3 /* WaypointDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointDetailViewController.m; sourceTree = "<group>"; };
+		239CF6871757E4EE00BFB1C3 /* WaypointDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaypointDetailViewController.xib; sourceTree = "<group>"; };
+		239CF68A1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestYouTubeVideoPlayerViewController.h; path = Subclasses/QuestYouTubeVideoPlayerViewController.h; sourceTree = "<group>"; };
+		239CF68B1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestYouTubeVideoPlayerViewController.m; path = Subclasses/QuestYouTubeVideoPlayerViewController.m; sourceTree = "<group>"; };
+		239CF68D1757FBCF00BFB1C3 /* UINavigationController+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Orientation.h"; sourceTree = "<group>"; };
+		239CF68E1757FBCF00BFB1C3 /* UINavigationController+Orientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Orientation.m"; sourceTree = "<group>"; };
+		239CF690175809B000BFB1C3 /* quest-navbar-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quest-navbar-landscape.png"; sourceTree = "<group>"; };
+		239CF691175809B000BFB1C3 /* quest-navbar-landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quest-navbar-landscape@2x.png"; sourceTree = "<group>"; };
+		239CF69617593DE400BFB1C3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Quest/Resources/Settings/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		239CF6981759414300BFB1C3 /* ImageUploadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageUploadManager.h; path = Utilities/ImageUploadManager.h; sourceTree = "<group>"; };
+		239CF6991759414300BFB1C3 /* ImageUploadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ImageUploadManager.m; path = Utilities/ImageUploadManager.m; sourceTree = "<group>"; };
 		23A889E3170E1B850045CB71 /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A889E6170E1B850045CB71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		23A889E8170E1B850045CB71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +188,11 @@
 		23A88A51170E75550045CB71 /* Quest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Quest.m; path = Models/Quest.m; sourceTree = "<group>"; };
 		23A88A54170F5FC00045CB71 /* RegisterSubclasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterSubclasses.h; path = Utilities/RegisterSubclasses.h; sourceTree = "<group>"; };
 		23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterSubclasses.m; path = Utilities/RegisterSubclasses.m; sourceTree = "<group>"; };
+		23B4929917594AF30019268E /* NSRunLoop+TimeOutAndFlag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRunLoop+TimeOutAndFlag.h"; sourceTree = "<group>"; };
+		23B4929A17594AF30019268E /* NSRunLoop+TimeOutAndFlag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRunLoop+TimeOutAndFlag.m"; sourceTree = "<group>"; };
+		23E2549E175554B8005EA046 /* AddWaypointViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddWaypointViewController.xib; sourceTree = "<group>"; };
+		23E254A117557813005EA046 /* Invite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Invite.h; path = Models/Invite.h; sourceTree = "<group>"; };
+		23E254A217557813005EA046 /* Invite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Invite.m; path = Models/Invite.m; sourceTree = "<group>"; };
 		23EBBBCF171E08A500AAEC77 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		23EBBBD0171E08A500AAEC77 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
 		23EBBBD4171E09A300AAEC77 /* UIBarButtonItem+ImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ImageButton.h"; sourceTree = "<group>"; };
@@ -244,12 +280,16 @@
 		239A85941718C2FE0091AC34 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				239CF6821757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.h */,
+				239CF6831757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.m */,
 				23EBBBE1171E2C0600AAEC77 /* UACellBackgroundView.h */,
 				23EBBBE2171E2C0600AAEC77 /* UACellBackgroundView.m */,
 				23EBBBDE171E29EC00AAEC77 /* QuestStyledTableViewCell.h */,
 				23EBBBDF171E29EC00AAEC77 /* QuestStyledTableViewCell.m */,
 				232CDCC31725D47F00BBB880 /* WaypointStyledTableViewCell.h */,
 				232CDCC41725D47F00BBB880 /* WaypointStyledTableViewCell.m */,
+				239CF68A1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.h */,
+				239CF68B1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.m */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -351,6 +391,7 @@
 		23A88A28170E2FE10045CB71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				239CF69617593DE400BFB1C3 /* Settings.bundle */,
 				239A858F1718B7370091AC34 /* Fonts */,
 				239A858C1718A5440091AC34 /* Stylesheets */,
 				23A88A42170E74710045CB71 /* Images */,
@@ -377,15 +418,21 @@
 		23A88A34170E6F4D0045CB71 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				239CF6851757E4EE00BFB1C3 /* WaypointDetailViewController.h */,
+				239CF6861757E4EE00BFB1C3 /* WaypointDetailViewController.m */,
+				239CF6871757E4EE00BFB1C3 /* WaypointDetailViewController.xib */,
+				239CF67F1757CE7900BFB1C3 /* ActiveQuestViewController.h */,
+				239CF6801757CE7900BFB1C3 /* ActiveQuestViewController.m */,
 				23A88A3E170E6F5D0045CB71 /* HomeViewController.h */,
 				23A88A3F170E6F5D0045CB71 /* HomeViewController.m */,
 				23A88A37170E6F4D0045CB71 /* CreateQuestViewController.h */,
 				23A88A38170E6F4D0045CB71 /* CreateQuestViewController.m */,
 				23A88A39170E6F4D0045CB71 /* CreateQuestViewController.xib */,
-				23476E82172099850018F3AF /* QuestTableViewController.h */,
-				23476E83172099850018F3AF /* QuestTableViewController.m */,
+				23476E82172099850018F3AF /* QuestViewController.h */,
+				23476E83172099850018F3AF /* QuestViewController.m */,
 				2357F53F172A11C200B59ADB /* AddWaypointViewController.h */,
 				2357F540172A11C200B59ADB /* AddWaypointViewController.m */,
+				23E2549E175554B8005EA046 /* AddWaypointViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -396,6 +443,8 @@
 				23476E69171F64CC0018F3AF /* App Icon [Squared] */,
 				23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */,
 				23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */,
+				239CF690175809B000BFB1C3 /* quest-navbar-landscape.png */,
+				239CF691175809B000BFB1C3 /* quest-navbar-landscape@2x.png */,
 				232CDCB71725CA0100BBB880 /* Cancel.png */,
 				232CDCB81725CA0100BBB880 /* Cancel@2x.png */,
 				23EBBBE9171E3C4600AAEC77 /* navbarShadow.png */,
@@ -428,6 +477,10 @@
 		23A88A4F170E753C0045CB71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				239CF67C1757313100BFB1C3 /* QuestActivity.h */,
+				239CF67D1757313100BFB1C3 /* QuestActivity.m */,
+				23E254A117557813005EA046 /* Invite.h */,
+				23E254A217557813005EA046 /* Invite.m */,
 				23A88A50170E75550045CB71 /* Quest.h */,
 				23A88A51170E75550045CB71 /* Quest.m */,
 				239A8587171764980091AC34 /* Waypoint.h */,
@@ -439,6 +492,8 @@
 		23A88A53170F5FA60045CB71 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				239CF6981759414300BFB1C3 /* ImageUploadManager.h */,
+				239CF6991759414300BFB1C3 /* ImageUploadManager.m */,
 				23A88A54170F5FC00045CB71 /* RegisterSubclasses.h */,
 				23A88A55170F5FC00045CB71 /* RegisterSubclasses.m */,
 			);
@@ -448,8 +503,12 @@
 		23EBBBD3171E096D00AAEC77 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				23B4929917594AF30019268E /* NSRunLoop+TimeOutAndFlag.h */,
+				23B4929A17594AF30019268E /* NSRunLoop+TimeOutAndFlag.m */,
 				23EBBBD4171E09A300AAEC77 /* UIBarButtonItem+ImageButton.h */,
 				23EBBBD5171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m */,
+				239CF68D1757FBCF00BFB1C3 /* UINavigationController+Orientation.h */,
+				239CF68E1757FBCF00BFB1C3 /* UINavigationController+Orientation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -464,6 +523,7 @@
 				23A889DF170E1B850045CB71 /* Sources */,
 				23A889E0170E1B850045CB71 /* Frameworks */,
 				23A889E1170E1B850045CB71 /* Resources */,
+				23E254A017556FE3005EA046 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -532,8 +592,6 @@
 				23A88A03170E1B850045CB71 /* HomeViewController_iPhone.xib in Resources */,
 				23A88A06170E1B850045CB71 /* HomeViewController_iPad.xib in Resources */,
 				23A88A2B170E30030045CB71 /* Introduction.plist in Resources */,
-				23A88A3B170E6F4D0045CB71 /* CreateQuestViewController.h in Resources */,
-				23A88A3C170E6F4D0045CB71 /* CreateQuestViewController.m in Resources */,
 				23A88A3D170E6F4D0045CB71 /* CreateQuestViewController.xib in Resources */,
 				23A88A49170E74710045CB71 /* checkmark_active.png in Resources */,
 				23A88A4A170E74710045CB71 /* checkmark_active@2x.png in Resources */,
@@ -574,6 +632,12 @@
 				23F0E71E173324D9009E386F /* SampleImage1@2x.png in Resources */,
 				23F0E71F173324D9009E386F /* SampleImage2.png in Resources */,
 				23F0E720173324D9009E386F /* SampleImage2@2x.png in Resources */,
+				23E2549F175554B8005EA046 /* AddWaypointViewController.xib in Resources */,
+				239CF6891757E4EE00BFB1C3 /* WaypointDetailViewController.xib in Resources */,
+				239CF692175809B000BFB1C3 /* quest-navbar-landscape.png in Resources */,
+				239CF693175809B000BFB1C3 /* quest-navbar-landscape@2x.png in Resources */,
+				239CF69717593DE500BFB1C3 /* Settings.bundle in Resources */,
+				239CF69E175942A200BFB1C3 /* ImageUploadManager.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +665,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		23E254A017556FE3005EA046 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/christophertruman/Desktop/Quest/Pods/Pods-resources.sh";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -615,13 +692,22 @@
 				23A88A40170E6F5D0045CB71 /* HomeViewController.m in Sources */,
 				23A88A52170E75550045CB71 /* Quest.m in Sources */,
 				23A88A56170F5FC00045CB71 /* RegisterSubclasses.m in Sources */,
+				239CF69C1759423C00BFB1C3 /* ImageUploadManager.m in Sources */,
 				239A8589171764980091AC34 /* Waypoint.m in Sources */,
 				23EBBBD6171E09A300AAEC77 /* UIBarButtonItem+ImageButton.m in Sources */,
 				23EBBBE0171E29EC00AAEC77 /* QuestStyledTableViewCell.m in Sources */,
 				23EBBBE4171E2C7000AAEC77 /* UACellBackgroundView.m in Sources */,
-				23476E84172099850018F3AF /* QuestTableViewController.m in Sources */,
+				23476E84172099850018F3AF /* QuestViewController.m in Sources */,
 				232CDCC51725D47F00BBB880 /* WaypointStyledTableViewCell.m in Sources */,
 				2357F541172A11C200B59ADB /* AddWaypointViewController.m in Sources */,
+				23E254A317557813005EA046 /* Invite.m in Sources */,
+				239CF67E1757313100BFB1C3 /* QuestActivity.m in Sources */,
+				239CF6811757CE7900BFB1C3 /* ActiveQuestViewController.m in Sources */,
+				239CF6841757DC1900BFB1C3 /* ActiveWaypointStyledTableViewCell.m in Sources */,
+				239CF6881757E4EE00BFB1C3 /* WaypointDetailViewController.m in Sources */,
+				239CF68C1757F91B00BFB1C3 /* QuestYouTubeVideoPlayerViewController.m in Sources */,
+				239CF68F1757FBCF00BFB1C3 /* UINavigationController+Orientation.m in Sources */,
+				23B4929B17594AF30019268E /* NSRunLoop+TimeOutAndFlag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

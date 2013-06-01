@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class  Quest;
+
 @interface AddWaypointViewController : UIViewController
+
+@property (nonatomic, strong) Quest * quest;
+
+@property (nonatomic, strong) NSNumber * order;
 
 @end

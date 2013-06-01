@@ -14,6 +14,4 @@
 
 @property (nonatomic, strong) MYIntroductionView * introductionView;
 
-@property (nonatomic, strong) NSMutableArray * quests;
-
 @end

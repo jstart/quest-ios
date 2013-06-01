@@ -18,7 +18,7 @@
 @synthesize position;
 
 -(id)initWithFrame:(CGRect)frame{
-    if ([super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         self.topGradientColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
         self.bottomGradientColor = [UIColor colorWithRed:0.866 green:0.866 blue:0.866 alpha:1];
     }

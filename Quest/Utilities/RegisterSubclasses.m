@@ -9,12 +9,16 @@
 #import "RegisterSubclasses.h"
 #import "Quest.h"
 #import "Waypoint.h"
+#import "Invite.h"
+#import "QuestActivity.h"
 
 @implementation RegisterSubclasses
 
 +(void)registerSubclasses{
     [Quest registerSubclass];
     [Waypoint registerSubclass];
+    [Invite registerSubclass];
+    [QuestActivity registerSubclass];
 }
 
 @end

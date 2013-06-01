@@ -15,16 +15,6 @@
 		</dict>
 		<dict>
 			<key>inputType</key>
-			<string>foursquare</string>
-			<key>requiresInput</key>
-			<true/>
-			<key>text</key>
-			<string>Foursquare</string>
-			<key>image</key>
-			<string>SampleImage1</string>
-		</dict>
-		<dict>
-			<key>inputType</key>
 			<string>facebook</string>
 			<key>requiresInput</key>
 			<true/>

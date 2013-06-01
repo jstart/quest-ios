@@ -6,7 +6,6 @@
     },
     
     "UINavigationBar": {
-        "backgroundImage:normal":"quest-navbar",
         "titleTextAttributes": {
             "textColor":"white",
             "textShadowColor":"clear",
@@ -24,5 +23,15 @@
     
     "QuestStyledTableViewCell":{
         "textFont":"$tableCellFont"
+    },
+    "UITextField":{
+        "font":"$segmentControlFont"
+    },
+    "FBFriendPickerViewController":{
+        "UIToolbar": {
+            "tintColor": "#57b6ad",
+            "backgroundImage:any:default": "quest-navbar",
+            "backgroundImage:any:landscapePhone": "quest-navbar-landscape"
+        }
     }
 }

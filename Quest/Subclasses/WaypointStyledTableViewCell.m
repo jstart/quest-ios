@@ -22,7 +22,9 @@
 
 -(void)setupWithWaypoint:(Waypoint *)waypoint{
     self.waypoint = waypoint;
-    self.textLabel.text = waypoint.name;
+    NSString * orderText = [NSString stringWithFormat:@"%@. %@", waypoint.order, waypoint.name];
+
+    self.textLabel.text = orderText;
 }
 
 /*

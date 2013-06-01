@@ -11,7 +11,7 @@
 #import "SSToolkit.h"
 #import <QuartzCore/QuartzCore.h>
 #import "XCDFormInputAccessoryView.h"
-#import "QuestTableViewController.h"
+#import "QuestViewController.h"
 #import "UIBarButtonItem+ImageButton.h"
 
 #import "Quest.h"
@@ -21,7 +21,6 @@
 }
 
 @property (nonatomic, strong) XCDFormInputAccessoryView * inputAccessoryView;
-
 
 @end
 
@@ -113,7 +112,7 @@
 
 -(void)next{
     cancelled = YES;
-    QuestTableViewController * questTableViewController = [QuestTableViewController viewControllerForQuest:self.quest];
+    QuestViewController * questTableViewController = [QuestViewController viewControllerForQuest:self.quest withActionType:QuestViewControllerActionTypeCancel];
     [self.navigationController pushViewController:questTableViewController animated:YES];
 }
 
@@ -125,7 +124,6 @@
     [self done];
 }
 
-
 -(void)done{
     SSHUDView *hud = [[SSHUDView alloc] initWithTitle:@"Creating Quest..." loading:YES];
 	[hud show];
@@ -133,10 +131,10 @@
     self.quest.name = self.titleTextField.text;
     self.quest.description = self.descriptionTextField.text;
     self.quest.owner = [PFUser currentUser];
-//    [self.quest saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
+    [self.quest saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
         [hud completeAndDismissWithTitle:@"Created!"];
         [self next];
-//    }];
+    }];
 }
 
 - (void)viewDidUnload {
