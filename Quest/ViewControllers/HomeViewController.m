@@ -26,6 +26,7 @@
 #import "RCLocationManager.h"
 #import "QuestViewController.h"
 #import "ActiveQuestViewController.h"
+#import "SettingsViewController.h"
 #import "Quest.h"
 
 @interface HomeViewController () <MYIntroductionDelegate, UITableViewDataSource, UITableViewDelegate, RCLocationManagerDelegate>
@@ -65,6 +66,7 @@
     }
         
     self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Joined", @"Created", @"Viewing"]];
+    self.segmentedControl.selectionIndicatorHeight = 0.0;
     [self.segmentedControl setSelectionLocation:HMSegmentedControlSelectionLocationUp];
     [self.segmentedControl setSelectionStyle:HMSegmentedControlSelectionStyleBox];
     [self.segmentedControl setFrame:CGRectMake(0, 0, 320, 50)];
@@ -140,7 +142,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(facebookLogin) name:@"FacebookLogin" object:nil];
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(foursquareLogin) name:@"FoursquareLogin" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationAuthorization) name:@"LocationRequired" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableNotifications) name:@"NotificationsRequired" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self.introductionView selector:@selector(continueToNextPanel) name:@"NotificationsContinue" object:nil];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -175,7 +179,10 @@
 }
 
 -(void)showSettings{
+    SettingsViewController * settingsViewController = [[SettingsViewController alloc] init];
+    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:settingsViewController];
     
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - MYIntroductionViewDelegate
@@ -227,6 +234,15 @@
             NSLog(@"%@", error);
         }else{
             NSString * facebookID = [result objectForKey:@"id"];
+            NSString * firstName = [result objectForKey:@"first_name"];
+            NSString * lastName = [result objectForKey:@"last_name"];
+            NSString * photoURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", facebookID];
+            
+            [[PFUser currentUser] setObject:firstName forKey:@"firstName"];
+            [[PFUser currentUser] setObject:lastName forKey:@"lastName"];
+            [[PFUser currentUser] setObject:photoURL forKey:@"photoURL"];
+            [[PFUser currentUser] saveInBackground];
+            
             PFQuery * query = [PFQuery queryWithClassName:@"Invite"];
             [query whereKey:@"inviteeFacebookID" equalTo:facebookID];
             [query includeKey:@"inviter"];
@@ -245,6 +261,12 @@
                             [invite save];
                             [[[(Invite *)invite quest] relationforKey:@"questers"] addObject:[PFUser currentUser]];
                             [[(Invite *)invite quest] save];
+                            [[(Invite *)invite quest] registerJoinerForPushNotifications];
+                            PFPush * pushNotification = [[PFPush alloc] init];
+                            [pushNotification setChannel:[[(Invite *)invite quest] ownerChannelName]];
+                            NSString * message = [NSString stringWithFormat:@"%@ just started %@", [[PFUser currentUser] objectForKey:@"firstName"], [(Invite *)invite quest].name];
+                            [pushNotification setMessage:message];
+                            [pushNotification sendPushInBackground];
                             [self.tableView triggerPullToRefresh];
                         }];
                         [alert addToDisplayQueue];
@@ -276,6 +298,10 @@
     }];
 }
 
+-(void)enableNotifications{
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+}
 
 -(void)segmentedControlChangedValue:(HMSegmentedControl *) segmentedControl{
     [self.tableView reloadData];
@@ -306,8 +332,6 @@
     QuestStyledTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[QuestStyledTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//        [cell setSelectedBackgroundViewGradientColors:[NSArray arrayWithObjects:[UIColor colorWithHexString:@"57b6ad"].CGColor, [UIColor colorWithHexString:@"29d4be"].CGColor, nil]];
-//        [cell setSelectionGradientDirection:StyledTableViewCellSelectionGradientDirectionVertical];
     }
     
     Quest * quest = [self questAtIndex:indexPath.row];

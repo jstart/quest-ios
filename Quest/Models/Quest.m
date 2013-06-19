@@ -17,4 +17,37 @@
     return @"Quest";
 }
 
+-(void)registerOwnerForPushNotifications{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    NSString * channelName = [self ownerChannelName];
+    [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+    [currentInstallation saveInBackground];
+}
+
+-(void)registerViewerForPushNotifications{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    NSString * channelName = [self viewerChannelName];
+    [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+    [currentInstallation saveInBackground];
+}
+
+-(void)registerJoinerForPushNotifications{
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    NSString * channelName = [self joinerChannelName];
+    [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+    [currentInstallation saveInBackground];
+}
+
+-(NSString*)ownerChannelName{
+    return [NSString stringWithFormat:@"quest_owner-%@", self.objectId];
+}
+
+-(NSString*)viewerChannelName{
+    return [NSString stringWithFormat:@"quest_viewer-%@", self.objectId];
+}
+
+-(NSString*)joinerChannelName{
+    return [NSString stringWithFormat:@"quest_joiner-%@", self.objectId];
+}
+
 @end

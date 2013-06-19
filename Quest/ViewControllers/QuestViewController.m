@@ -96,7 +96,7 @@
 }
 
 -(void)done{
-    MBAlertView *alert = [MBAlertView alertWithBody:@"You now need to invite friends to your quest." cancelTitle:@"OK" cancelBlock:^(){
+    MBAlertView *alert = [MBAlertView alertWithBody:@"You now need to invite friends to join your quest." cancelTitle:@"OK" cancelBlock:^(){
         self.friendPickerViewController = [[FBFriendPickerViewController alloc] init];
         self.friendPickerViewController.delegate = self;
         [self.friendPickerViewController loadData];

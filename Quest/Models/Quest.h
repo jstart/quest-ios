@@ -18,4 +18,12 @@
 @property (nonatomic, strong) PFRelation * questers;
 @property (nonatomic, strong) PFRelation * waypoints;
 
+-(void)registerOwnerForPushNotifications;
+-(void)registerViewerForPushNotifications;
+-(void)registerJoinerForPushNotifications;
+
+-(NSString*)ownerChannelName;
+-(NSString*)viewerChannelName;
+-(NSString*)joinerChannelName;
+
 @end

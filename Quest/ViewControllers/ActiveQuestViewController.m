@@ -123,8 +123,22 @@
             NSArray * sortedArray = [objects sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"waypoint.order" ascending:YES]]];
             self.activityItems = [sortedArray mutableCopy];
             [self.tableView reloadData];
+            [self checkForCompletion];
         }];
     }];
+}
+
+-(void)checkForCompletion{
+    if (self.activityItems.count == self.waypoints.count) {
+        for (QuestActivity * questActivity in self.activityItems) {
+            if (!questActivity.hasCompleted.boolValue) {
+                return;
+            }
+        }
+        SSHUDView * hud = [[SSHUDView alloc] initWithTitle:@"Quest Complete!" loading:NO];
+        [hud show];
+        [hud completeAndDismissWithTitle:@"Quest Complete!"];
+    }
 }
 
 - (void)didReceiveMemoryWarning

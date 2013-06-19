@@ -132,6 +132,7 @@
     self.quest.description = self.descriptionTextField.text;
     self.quest.owner = [PFUser currentUser];
     [self.quest saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
+        [self.quest registerOwnerForPushNotifications];
         [hud completeAndDismissWithTitle:@"Created!"];
         [self next];
     }];

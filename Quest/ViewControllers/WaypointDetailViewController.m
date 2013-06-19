@@ -202,6 +202,11 @@
                         [hud completeAndDismissWithTitle:@"You found it!"];
                         [(UIButton *)self.navigationItem.rightBarButtonItem.customView.subviews[0] setEnabled:YES];
                         [(UIButton *)self.navigationItem.rightBarButtonItem.customView.subviews[0] setSelected:YES];
+                        PFPush * pushNotification = [[PFPush alloc] init];
+                        [pushNotification setChannel:[self.waypoint.quest ownerChannelName]];
+                        NSString * message = [NSString stringWithFormat:@"%@ just found waypoint #%@, %@", [[PFUser currentUser] objectForKey:@"firstName"], self.waypoint.order, self.waypoint.name];
+                        [pushNotification setMessage:message];
+                        [pushNotification sendPushInBackground];
                     }
                 }];
 

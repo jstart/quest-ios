@@ -93,4 +93,23 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current Installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+
+    [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error){
+        NSString * channelName = [NSString stringWithFormat:@"installation-%@", [PFInstallation currentInstallation].objectId];
+        [currentInstallation addUniqueObject:channelName forKey:@"channels"];
+        [currentInstallation saveInBackground];
+    }];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationsContinue" object:nil];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationsContinue" object:nil];
+}
+
 @end

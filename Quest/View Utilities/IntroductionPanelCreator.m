@@ -33,6 +33,8 @@
         return [IntroductionPanelCreator foursquareButton];
     } else if ([inputType isEqualToString:@"facebook"]) {
         return [IntroductionPanelCreator facebookButton];
+    }else if ([inputType isEqualToString:@"notifications"]) {
+        return [IntroductionPanelCreator notificationsButton];
     }
     return nil;
 }
@@ -46,6 +48,17 @@
     }];
     locationButton.alpha = 1.0;
     return locationButton;
+}
+
++(UIButton*)notificationsButton{
+    UIButton * notificationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    notificationButton.frame = CGRectMake(0, 0, 200, 50);
+    [notificationButton setTitle:@"Enable Notifications" forState:UIControlStateNormal];
+    [notificationButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationsRequired" object:nil];
+    }];
+    notificationButton.alpha = 1.0;
+    return notificationButton;
 }
 
 

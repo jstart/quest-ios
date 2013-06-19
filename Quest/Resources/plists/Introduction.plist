@@ -14,6 +14,16 @@
 			<string>SampleImage1</string>
 		</dict>
 		<dict>
+			<key>image</key>
+			<string>SampleImage1</string>
+			<key>text</key>
+			<string>Quest will send push notifications to you.</string>
+			<key>requiresInput</key>
+			<true/>
+			<key>inputType</key>
+			<string>notifications</string>
+		</dict>
+		<dict>
 			<key>inputType</key>
 			<string>facebook</string>
 			<key>requiresInput</key>
