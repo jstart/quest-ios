@@ -255,6 +255,7 @@
     WaypointDetailViewController * waypointDetailViewController = [[WaypointDetailViewController alloc] init];
     waypointDetailViewController.waypoint = [self waypointAtIndex:indexPath.row];
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:waypointDetailViewController];
+    [navigationController.navigationBar setTranslucent:NO];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 

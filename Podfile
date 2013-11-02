@@ -2,6 +2,7 @@ platform :ios, '6.0'
 inhibit_all_warnings!
 
 pod 'Parse', '~> 1.2.5'
+pod 'TestFlightSDK', '~> 1.3.0-beta.6'
 pod 'HCYoutubeParser', '~> 0.0.1'
 pod 'XCDYouTubeVideoPlayerViewController', '~> 1.0.0'
 pod 'HMSegmentedControl', '~> 1.2.0'
@@ -25,5 +26,5 @@ pod 'ZBarSDK', '~> 1.3.1'
 pod 'MBAlertView', '~> 1.0.0'
 pod 'FlatUIKit', '~> 1.1'
 pod 'MTStatusBarOverlay', '~> 0.9.1'
-
+pod 'QBFlatButton', '~> 1.0'
 

@@ -11,7 +11,7 @@
 #define kDefaultMargin           10
 
 #import "UACellBackgroundView.h"
-#import "UIColor+Expanded.h"
+#import <UIColor+Expanded.h>
 
 @implementation UACellBackgroundView
 

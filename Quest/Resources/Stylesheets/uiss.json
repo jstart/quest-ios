@@ -5,14 +5,7 @@
         "tableCellFont":["Avenir-Black", 30]
     },
     
-    "UINavigationBar": {
-        "titleTextAttributes": {
-            "textColor":"white",
-            "textShadowColor":"clear",
-            "textShadowOffset": [0, 0],
-            "font":"$navBarFont"
-        }
-    },
+    
     "HMSegmentedControl":{
         "textColor":"white",
         "backgroundColor":"#8bcfb6",

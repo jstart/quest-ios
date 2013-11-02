@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class QBFlatButton;
+
 @interface IntroductionPanelCreator : NSObject
 
 +(NSArray *)createIntroductionPanelsFromArray:(NSArray *) introductionArray;
-+(UIButton *)buttonForInputType:(NSString*)inputType;
++(QBFlatButton *)buttonForInputType:(NSString*)inputType;
 
 @end

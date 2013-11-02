@@ -7,8 +7,10 @@
 //
 
 #import "IntroductionPanelCreator.h"
-#import "MYIntroductionPanel.h"
-#import "UIControl+ALActionBlocks.h"
+#import <MYIntroductionPanel.h>
+#import <UIControl+ALActionBlocks.h>
+#import <QBFlatButton.h>
+#import <UIColor+Expanded.h>
 
 @implementation IntroductionPanelCreator
 
@@ -18,15 +20,17 @@
         NSString * text = dict[@"text"];
         NSString * image = dict[@"image"];
         NSNumber * requiresInput = dict[@"requiresInput"];
-        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithImage:[UIImage imageNamed:image] description:text];
+        NSNumber * hasGIF = dict[@"hasGIF"];
+        MYIntroductionPanel *panel = [[MYIntroductionPanel alloc] initWithImageName:image description:text];
         panel.requiresInput = [requiresInput boolValue];
+        panel.hasGIF = [hasGIF boolValue];
         [panelArray addObject:panel];
         panel.inputButton = [IntroductionPanelCreator buttonForInputType:dict[@"inputType"]];
     }
     return panelArray;
 }
 
-+(UIButton *)buttonForInputType:(NSString*)inputType{
++(QBFlatButton *)buttonForInputType:(NSString*)inputType{
     if ([inputType isEqualToString:@"location"]) {
         return [IntroductionPanelCreator locationButton];
     } else if ([inputType isEqualToString:@"foursquare"]) {
@@ -35,12 +39,27 @@
         return [IntroductionPanelCreator facebookButton];
     }else if ([inputType isEqualToString:@"notifications"]) {
         return [IntroductionPanelCreator notificationsButton];
+    }else if ([inputType isEqualToString:@"next"]) {
+        return [IntroductionPanelCreator nextButton];
     }
     return nil;
 }
 
-+(UIButton*)locationButton{
-    UIButton * locationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
++(QBFlatButton*)nextButton{
+    QBFlatButton * nextButton = [[QBFlatButton alloc] init];
+    [nextButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
+    nextButton.frame = CGRectMake(0, 0, 200, 50);
+    [nextButton setTitle:@"Next" forState:UIControlStateNormal];
+    [nextButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Next" object:nil];
+    }];
+    nextButton.alpha = 1.0;
+    return nextButton;
+}
+
++(QBFlatButton*)locationButton{
+    QBFlatButton * locationButton = [[QBFlatButton alloc] init];
+    [locationButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
     locationButton.frame = CGRectMake(0, 0, 200, 50);
     [locationButton setTitle:@"Enable Location" forState:UIControlStateNormal];
     [locationButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
@@ -50,8 +69,9 @@
     return locationButton;
 }
 
-+(UIButton*)notificationsButton{
-    UIButton * notificationButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
++(QBFlatButton *)notificationsButton{
+    QBFlatButton * notificationButton = [[QBFlatButton alloc] init];
+    [notificationButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
     notificationButton.frame = CGRectMake(0, 0, 200, 50);
     [notificationButton setTitle:@"Enable Notifications" forState:UIControlStateNormal];
     [notificationButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
@@ -61,20 +81,23 @@
     return notificationButton;
 }
 
-
-+(UIButton*)facebookButton{
-    UIButton * loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
++(QBFlatButton *)facebookButton{
+    QBFlatButton * loginButton = [[QBFlatButton alloc] init];
+    [loginButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
     loginButton.frame = CGRectMake(0, 0, 200, 50);
     [loginButton setTitle:@"Login With Facebook" forState:UIControlStateNormal];
     [loginButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
         [[NSNotificationCenter defaultCenter] postNotificationName:@"FacebookLogin" object:nil];
     }];
     loginButton.alpha = 1.0;
+    [loginButton setFaceColor:[UIColor colorWithHexString:@"3b5999"] forState:UIControlStateNormal];
+    [loginButton setSideColor:[UIColor blackColor] forState:UIControlStateNormal];
     return loginButton;
 }
 
-+(UIButton*)foursquareButton{
-    UIButton * foursquareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
++(QBFlatButton *)foursquareButton{
+    QBFlatButton * foursquareButton = [[QBFlatButton alloc] init];
+    [foursquareButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
     foursquareButton.frame = CGRectMake(0, 0, 200, 50);
     [foursquareButton setTitle:@"Login With Foursquare" forState:UIControlStateNormal];
     [foursquareButton handleControlEvents:UIControlEventTouchUpInside withBlock:^(UIButton * button){
@@ -83,6 +106,5 @@
     foursquareButton.alpha = 1.0;
     return foursquareButton;
 }
-
 
 @end

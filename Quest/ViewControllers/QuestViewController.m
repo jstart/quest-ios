@@ -56,8 +56,9 @@
     UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     [backgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"agsquare"]]];
     self.tableView.backgroundView = backgroundView;
-    [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"606a76"]];
-    
+//    [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"606a76"]];
+    [self.tableView setSeparatorColor:[UIColor clearColor]];
+
     if (self.actionType == QuestViewControllerActionTypeCancel) {
         UIBarButtonItem * cancelButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"Cancel"] forState:UIControlStateNormal target:self action:@selector(cancel)];
         self.navigationItem.leftBarButtonItem = cancelButtonItem;
@@ -66,7 +67,6 @@
         self.navigationItem.leftBarButtonItem = closeButtonItem;
     }
 
-    
     UIBarButtonItem * checkmarkButtonItem = [UIBarButtonItem itemWithImage:[UIImage imageNamed:@"checkmark_active"] forState:UIControlStateNormal target:self action:@selector(done)];
     self.navigationItem.rightBarButtonItem = checkmarkButtonItem;
 }
@@ -235,6 +235,7 @@
     addWaypointViewController.quest = self.quest;
     addWaypointViewController.order = @([self.numberOfWaypoints integerValue] + 1);
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:addWaypointViewController];
+    [navigationController.navigationBar setTranslucent:NO];
     [self presentViewController:navigationController animated:YES completion:^() {
         
     }];

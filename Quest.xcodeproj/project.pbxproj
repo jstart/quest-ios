@@ -26,6 +26,15 @@
 		23476E7D171F64CC0018F3AF /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23476E73171F64CC0018F3AF /* iTunesArtwork@2x.png */; };
 		23476E84172099850018F3AF /* QuestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23476E83172099850018F3AF /* QuestViewController.m */; };
 		2357F541172A11C200B59ADB /* AddWaypointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2357F540172A11C200B59ADB /* AddWaypointViewController.m */; };
+		23719F78177A47830068408F /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F70177A47830068408F /* facebook.png */; };
+		23719F79177A47830068408F /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F71177A47830068408F /* facebook@2x.png */; };
+		23719F7A177A47830068408F /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F72177A47830068408F /* location_icon.png */; };
+		23719F7B177A47830068408F /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F73177A47830068408F /* location_icon@2x.png */; };
+		23719F7C177A47830068408F /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F74177A47830068408F /* notification.png */; };
+		23719F7D177A47830068408F /* notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F75177A47830068408F /* notification@2x.png */; };
+		23719F7E177A47830068408F /* qr_code.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F76177A47830068408F /* qr_code.png */; };
+		23719F7F177A47830068408F /* qr_code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23719F77177A47830068408F /* qr_code@2x.png */; };
+		23719F9C177A57110068408F /* quest_button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 23719F9B177A57110068408F /* quest_button.gif */; };
 		239A8589171764980091AC34 /* Waypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 239A8588171764980091AC34 /* Waypoint.m */; };
 		239A858E1718A5590091AC34 /* uiss.json in Resources */ = {isa = PBXBuildFile; fileRef = 239A858D1718A5590091AC34 /* uiss.json */; };
 		239A85921718B7580091AC34 /* CALIBRI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 239A85901718B7580091AC34 /* CALIBRI.TTF */; };
@@ -129,6 +138,15 @@
 		23476E83172099850018F3AF /* QuestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestViewController.m; sourceTree = "<group>"; };
 		2357F53F172A11C200B59ADB /* AddWaypointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddWaypointViewController.h; sourceTree = "<group>"; };
 		2357F540172A11C200B59ADB /* AddWaypointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddWaypointViewController.m; sourceTree = "<group>"; };
+		23719F70177A47830068408F /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		23719F71177A47830068408F /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
+		23719F72177A47830068408F /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
+		23719F73177A47830068408F /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
+		23719F74177A47830068408F /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
+		23719F75177A47830068408F /* notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification@2x.png"; sourceTree = "<group>"; };
+		23719F76177A47830068408F /* qr_code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_code.png; sourceTree = "<group>"; };
+		23719F77177A47830068408F /* qr_code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_code@2x.png"; sourceTree = "<group>"; };
+		23719F9B177A57110068408F /* quest_button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = quest_button.gif; sourceTree = "<group>"; };
 		239A8587171764980091AC34 /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waypoint.h; path = Models/Waypoint.h; sourceTree = "<group>"; };
 		239A8588171764980091AC34 /* Waypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Waypoint.m; path = Models/Waypoint.m; sourceTree = "<group>"; };
 		239A858D1718A5590091AC34 /* uiss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uiss.json; path = Resources/Stylesheets/uiss.json; sourceTree = "<group>"; };
@@ -450,6 +468,15 @@
 		23A88A42170E74710045CB71 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				23719F9B177A57110068408F /* quest_button.gif */,
+				23719F70177A47830068408F /* facebook.png */,
+				23719F71177A47830068408F /* facebook@2x.png */,
+				23719F72177A47830068408F /* location_icon.png */,
+				23719F73177A47830068408F /* location_icon@2x.png */,
+				23719F74177A47830068408F /* notification.png */,
+				23719F75177A47830068408F /* notification@2x.png */,
+				23719F76177A47830068408F /* qr_code.png */,
+				23719F77177A47830068408F /* qr_code@2x.png */,
 				23476E69171F64CC0018F3AF /* App Icon [Squared] */,
 				23EBBBEF171E3EC000AAEC77 /* pw_maze_black.png */,
 				23EBBBF0171E3EC000AAEC77 /* pw_maze_black@2x.png */,
@@ -649,6 +676,15 @@
 				239CF69717593DE500BFB1C3 /* Settings.bundle in Resources */,
 				239CF69E175942A200BFB1C3 /* ImageUploadManager.m in Resources */,
 				23B492A0175D5D100019268E /* SettingsViewController.xib in Resources */,
+				23719F78177A47830068408F /* facebook.png in Resources */,
+				23719F79177A47830068408F /* facebook@2x.png in Resources */,
+				23719F7A177A47830068408F /* location_icon.png in Resources */,
+				23719F7B177A47830068408F /* location_icon@2x.png in Resources */,
+				23719F7C177A47830068408F /* notification.png in Resources */,
+				23719F7D177A47830068408F /* notification@2x.png in Resources */,
+				23719F7E177A47830068408F /* qr_code.png in Resources */,
+				23719F7F177A47830068408F /* qr_code@2x.png in Resources */,
+				23719F9C177A57110068408F /* quest_button.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +815,7 @@
 /* Begin XCBuildConfiguration section */
 		23A88A1C170E1B850045CB71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -814,6 +851,7 @@
 		};
 		23A88A1D170E1B850045CB71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 387F01572FBB4BE5A3CA1214 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -851,6 +889,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Quest/Quest-Prefix.pch";
 				INFOPLIST_FILE = "Quest/Quest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -868,6 +907,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Quest/Quest-Prefix.pch";
 				INFOPLIST_FILE = "Quest/Quest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

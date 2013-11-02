@@ -7,28 +7,39 @@
 //
 
 #import "AppDelegate.h"
-#import "DCIntrospect.h"
-#import "UIResponder+KeyboardCache.h"
+#import <DCIntrospect.h>
+#import <UIResponder+KeyboardCache.h>
 #import <Parse/Parse.h>
 #import "RegisterSubclasses.h"
-#import "UISS.h"
+#import <UISS.h>
+#import <TestFlight.h>
+#import <UIColor+Expanded.h>
 #ifdef DEBUG
-    #import "PonyDebugger.h"
+    #import <PonyDebugger.h>
 #endif
 
 #import "HomeViewController.h"
+
+@interface AppDelegate ()
+
+@property (nonatomic, assign) NSNumber * openedViaURL;
+
+@end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"fcb970e7-9573-4d79-b5b8-1235864db7c4"];
     [Parse setApplicationId:@"GuK8T7ww0O8n3436UJuscxvbC64b39FdvtKe7K0W" clientKey:@"E2hE67txdeet624MrJRmpGowlh6WhdyrJ0B94IVJ"];
     [PFFacebookUtils initializeFacebook];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [RegisterSubclasses registerSubclasses];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
-    
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"8bcfb6"]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor whiteColor], UITextAttributeTextShadowColor: [UIColor clearColor], UITextAttributeFont: [UIFont fontWithName:@"Calibri-Bold" size:28]}];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -38,12 +49,13 @@
     }
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    
+    [self.navigationController.navigationBar setTranslucent:NO];
+
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
 #if TARGET_IPHONE_SIMULATOR
-    self.userInterfaceStyleSheets = [UISS configureWithURL:[NSURL URLWithString:@"http://localhost/~christophertruman/uiss.json"]];
+//    self.userInterfaceStyleSheets = [UISS configureWithURL:[NSURL URLWithString:@"http://localhost/~christophertruman/uiss.json"]];
     [[DCIntrospect sharedIntrospector] start];
 //    PDDebugger *debugger = [PDDebugger defaultInstance];
 //    [debugger connectToURL:[NSURL URLWithString:@"ws://localhost:9000/device"]];
@@ -58,11 +70,14 @@
     self.userInterfaceStyleSheets.autoReloadTimeInterval = 1;
     self.userInterfaceStyleSheets.statusWindowEnabled = NO;
     [UIResponder cacheKeyboard:YES];
+    
+    self.openedViaURL = [NSNumber numberWithBool:YES];
     return YES;
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    self.openedViaURL = [NSNumber numberWithBool:YES];
     return [PFFacebookUtils handleOpenURL:url];
 }
 
@@ -76,6 +91,7 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    self.openedViaURL = [NSNumber numberWithBool:NO];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -86,6 +102,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if (![self.openedViaURL boolValue]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Foreground" object:nil];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

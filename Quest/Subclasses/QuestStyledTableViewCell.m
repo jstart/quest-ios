@@ -23,6 +23,8 @@
         [backgroundView setBackgroundColor:[UIColor colorWithHexString:@"4d5967"]];
         self.backgroundView = backgroundView;
         [self.textLabel setBackgroundColor:[UIColor clearColor]];
+
+        [self.textLabel setFont:[UIFont fontWithName:@"Avenir-Black" size:30]]; 
         
         UACellBackgroundView * selectedBackgroundView = [[UACellBackgroundView alloc] initWithFrame:CGRectZero];
         [selectedBackgroundView setTopGradientColor:[UIColor colorWithHexString:@"29d4be"]];
@@ -30,6 +32,8 @@
         self.selectedBackgroundView = selectedBackgroundView;
         
         [self.textLabel setTextColor:[UIColor colorWithHexString:@"fefefe"]];
+        
+        self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Forward"]];
     }
     return self;
 }

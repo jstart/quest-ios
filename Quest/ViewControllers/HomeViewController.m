@@ -20,6 +20,7 @@
 #import "HMSegmentedControl.h"
 #import "QuestStyledTableViewCell.h"
 #import <MBAlertView.h>
+#import <SSHUDView.h>
 //#import "Foursquare2.h"
 #import "UIBarButtonItem+ImageButton.h"
 #import "UIColor+Expanded.h"
@@ -40,6 +41,8 @@
 
 @property (nonatomic, strong) UIButton * loginButton;
 @property (nonatomic, strong) UIButton * foursquareLoginButton;
+
+@property (nonatomic, strong) SSHUDView * facebookHUD;
 @end
 
 @implementation HomeViewController
@@ -52,8 +55,10 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"606a76"]];
-    self.navigationController.navigationBar.shadowImage = [UIImage imageNamed:@"navbarShadow"];
+//    [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"606a76"]];
+    [self.tableView setSeparatorColor:[UIColor clearColor]];
+
+//    self.navigationController.navigationBar.shadowImage = [UIImage imageNamed:@"navbarShadow"];
 
     UIView * backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
     [backgroundView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"agsquare"]]];
@@ -66,6 +71,11 @@
     }
         
     self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Joined", @"Created", @"Viewing"]];
+    [self.segmentedControl setBackgroundColor:[UIColor colorWithHexString:@"8bcfb6"]];
+    [self.segmentedControl setTextColor:[UIColor whiteColor]];
+    [self.segmentedControl setSelectedTextColor:[UIColor whiteColor]];
+    [self.segmentedControl setSelectionIndicatorColor:[UIColor blackColor]];
+    [self.segmentedControl setFont:[UIFont fontWithName:@"Avenir-Black" size:16 ]];
     self.segmentedControl.selectionIndicatorHeight = 0.0;
     [self.segmentedControl setSelectionLocation:HMSegmentedControlSelectionLocationUp];
     [self.segmentedControl setSelectionStyle:HMSegmentedControlSelectionStyleBox];
@@ -104,12 +114,21 @@
                     switch (self.segmentedControl.selectedSegmentIndex) {
                         case 0:
                             self.joinedQuests = [objects mutableCopy];
+                            for (Quest * quest in objects) {
+                                [quest registerJoinerForPushNotifications];
+                            }
                             break;
                         case 1:
                             self.createdQuests = [objects mutableCopy];
+                            for (Quest * quest in objects) {
+                                [quest registerOwnerForPushNotifications];
+                            }
                             break;
                         case 2:
                             self.viewingQuests = [objects mutableCopy];
+                            for (Quest * quest in objects) {
+                                [quest registerViewerForPushNotifications];
+                            }
                             break;
                             
                         default:
@@ -144,7 +163,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationAuthorization) name:@"LocationRequired" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableNotifications) name:@"NotificationsRequired" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self.introductionView selector:@selector(continueToNextPanel) name:@"NotificationsContinue" object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self.introductionView selector:@selector(continueToNextPanel) name:@"Next" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeHUD) name:@"Foreground" object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -174,15 +194,21 @@
 - (void)showCreate {
     CreateQuestViewController * createQuestViewController = [[CreateQuestViewController alloc] init];
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:createQuestViewController];
-    
+    [navigationController.navigationBar setTranslucent:NO];
+
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 -(void)showSettings{
     SettingsViewController * settingsViewController = [[SettingsViewController alloc] init];
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:settingsViewController];
-    
+    [navigationController.navigationBar setTranslucent:NO];
+
     [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+-(void)removeHUD{
+    [self.facebookHUD failAndDismissWithTitle:@"Facebook Conection Failed. Try again."];
 }
 
 #pragma mark - MYIntroductionViewDelegate
@@ -204,11 +230,16 @@
 }
 
 -(void)facebookLogin{
+    self.facebookHUD = [[SSHUDView alloc] initWithTitle:@"Contacting Facebook" loading:YES];
+    [self.facebookHUD show];
     [PFFacebookUtils logInWithPermissions:@[@"email"] block:^(PFUser *user, NSError *error) {
         if (!user) {
+            [self.facebookHUD completeAndDismissWithTitle:@"One moment..."];
             [PFFacebookUtils initializeFacebook];
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            [self fbResync];
+            NSLog(@"Uh oh. The user cancelled the Facebook login. %@", error);
         } else if (user.isNew) {
+            [self.facebookHUD completeAndDismissWithTitle:@"Connected"];
             NSLog(@"User signed up and logged in through Facebook!");
             [self.introductionView hideWithFadeOutDuration:0.2];
             [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -216,6 +247,7 @@
             [[self tableView] triggerPullToRefresh];
             [self acceptInvites];
         } else {
+            [self.facebookHUD completeAndDismissWithTitle:@"Logged in"];
             NSLog(@"User logged in through Facebook!");
             [self.introductionView hideWithFadeOutDuration:0.2];
             [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -226,10 +258,33 @@
     }];
 }
 
+-(void)fbResync
+{
+    ACAccountStore *accountStore;
+    ACAccountType *accountTypeFB;
+    if ((accountStore = [[ACAccountStore alloc] init]) && (accountTypeFB = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook] ) ){
+        
+        NSArray *fbAccounts = [accountStore accountsWithAccountType:accountTypeFB];
+        id account;
+        if (fbAccounts && [fbAccounts count] > 0 && (account = [fbAccounts objectAtIndex:0])){
+            
+            [accountStore renewCredentialsForAccount:account completion:^(ACAccountCredentialRenewResult renewResult, NSError *error) {
+                //we don't actually need to inspect renewResult or error.
+                [self facebookLogin];
+                if (error){
+                    NSLog(@"%@", error);
+                }
+            }];
+        }
+        
+    }
+}
+
 -(void)acceptInvites{
     [[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection,
                                                          id result,
                                                           NSError *error){
+        NSLog(@"%@", result);
         if (error) {
             NSLog(@"%@", error);
         }else{
@@ -248,6 +303,7 @@
             [query includeKey:@"inviter"];
             [query includeKey:@"quest"];
             [query getFirstObjectInBackgroundWithBlock:^(PFObject * invite, NSError * error) {
+                NSLog(@"%@", invite);
                 if (error) {
                     NSLog(@"%@", error);
                 }
@@ -381,6 +437,7 @@
     }
     
     UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:nextViewController];
+    [navigationController.navigationBar setTranslucent:NO];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 

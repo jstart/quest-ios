@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 truman. All rights reserved.
 //
 
+
 #import <Parse/Parse.h>
 
 @class Quest;

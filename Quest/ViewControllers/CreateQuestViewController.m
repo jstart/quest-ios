@@ -7,10 +7,10 @@
 //
 
 #import "CreateQuestViewController.h"
-#import "UIColor+Expanded.h"
-#import "SSToolkit.h"
+#import <UIColor+Expanded.h>
+#import <SSToolkit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "XCDFormInputAccessoryView.h"
+#import <XCDFormInputAccessoryView.h>
 #import "QuestViewController.h"
 #import "UIBarButtonItem+ImageButton.h"
 
@@ -73,7 +73,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.inputAccessoryView = [[XCDFormInputAccessoryView alloc] init];
     [self.inputAccessoryView setHasDoneButton:NO animated:NO];
 }

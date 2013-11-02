@@ -4,34 +4,64 @@
 <array>
 	<array>
 		<dict>
+			<key>hasGIF</key>
+			<false/>
+			<key>inputType</key>
+			<string>next</string>
+			<key>requiresInput</key>
+			<false/>
+			<key>text</key>
+			<string>Quest is a simple app that will guide you on a scavenger hunt created by your friends.</string>
+			<key>image</key>
+			<string>nil</string>
+		</dict>
+		<dict>
+			<key>hasGIF</key>
+			<true/>
+			<key>inputType</key>
+			<string>next</string>
+			<key>requiresInput</key>
+			<false/>
+			<key>text</key>
+			<string>Tap on one of your quests and scan codes with this app to complete the Quest.</string>
+			<key>image</key>
+			<string>quest_button</string>
+		</dict>
+		<dict>
+			<key>hasGIF</key>
+			<false/>
 			<key>inputType</key>
 			<string>location</string>
 			<key>requiresInput</key>
 			<true/>
 			<key>text</key>
-			<string>Location Required</string>
+			<string>Quest will use your location to help your friends see your progress!</string>
 			<key>image</key>
-			<string>SampleImage1</string>
+			<string>location_icon</string>
 		</dict>
 		<dict>
+			<key>hasGIF</key>
+			<false/>
 			<key>image</key>
-			<string>SampleImage1</string>
+			<string>notification</string>
 			<key>text</key>
-			<string>Quest will send push notifications to you.</string>
+			<string>Quest will send push notifications when important updates occur on your Quest.</string>
 			<key>requiresInput</key>
 			<true/>
 			<key>inputType</key>
 			<string>notifications</string>
 		</dict>
 		<dict>
+			<key>hasGIF</key>
+			<false/>
 			<key>inputType</key>
 			<string>facebook</string>
 			<key>requiresInput</key>
 			<true/>
 			<key>text</key>
-			<string>Facebook</string>
+			<string>Log in with Facebook to see if your friends have invited you to a quest.</string>
 			<key>image</key>
-			<string>SampleImage2</string>
+			<string>facebook</string>
 		</dict>
 	</array>
 </array>
